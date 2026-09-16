@@ -148,13 +148,41 @@ section > .col > h2{font-size:clamp(2.1rem,4.8vw,3.4rem);line-height:1.05;margin
 .cl a span:first-child{color:var(--discret)}
 .cl a:hover span:last-child{text-decoration:underline;text-decoration-color:var(--mauve)}
 footer{padding:2.4rem 0 3rem;color:var(--discret);font-size:.88rem;display:flex;flex-wrap:wrap;gap:.4rem 2rem}
+
+/* aération mobile, sans effet au-dessus de 900 px */
+@media(max-width:899px){
+  body{line-height:1.7}
+  .hero{padding-top:4rem}
+  .sous{margin-bottom:2rem}
+  .deux{gap:2.8rem}
+  .lede + .lede{margin-top:1.3rem}
+  .actions{margin-top:2.2rem}
+  .faits div{padding:1.4rem 0}
+  section{padding-top:5.5rem}
+  section > .col > h2{margin-bottom:.9rem}
+  .intro{margin-bottom:2.8rem}
+  .reg > div{padding:2.2rem 0;gap:1rem}
+  .reg p + p{margin-top:.9rem}
+  .dossier{padding:3.4rem 0;gap:2.4rem}
+  .dossier h3{margin-bottom:.8rem}
+  .ctx{margin-bottom:1.8rem}
+  .met > div{padding:1.15rem 0}
+  .faits-l li{padding:1.25rem 0}
+  .pile{margin-top:1.5rem}
+  .ent li{padding:1rem 0}
+  .compact li{padding:1.5rem 0;gap:.5rem}
+  .par{gap:3.2rem}
+  .par li{padding:1.3rem 0}
+  .cl a{padding:1.3rem 0}
+  footer{padding-top:3rem}
+}
 </style>
 </head>
 <body>
 
 <div class="barre"><div class="col">
   <a class="marque" href="#haut">Mahé Begnis</a>
-  <nav class="liens"><a href="#competences">Compétences</a><a href="#production">Production</a><a href="#code">Code ouvert</a><a href="#parcours">Parcours</a><a href="#contact">Contact</a></nav>
+  <nav class="liens"><a href="#competences">Compétences</a><a href="#production">Production</a><a href="#recherche">Projets de recherche</a><a href="#parcours">Parcours</a><a href="#contact">Contact</a></nav>
   <a class="cv-b" href="CV_Mahe_Begnis.pdf">Le CV</a>
 </div></div>
 
@@ -299,8 +327,8 @@ footer{padding:2.4rem 0 3rem;color:var(--discret);font-size:.88rem;display:flex;
   </ul>
 </div></section>
 
-<section id="code"><div class="col">
-  <h2>Code ouvert</h2>
+<section id="recherche"><div class="col">
+  <h2>Projets de recherche</h2>
   <p class="intro">Deux travaux de Master 1, publiés en entier sur GitHub : données, code, décisions et résultats.</p>
 
   <article class="dossier">
