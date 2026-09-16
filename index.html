@@ -1,0 +1,253 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Mahé Begnis, Data Scientist &amp; GenAI Engineer</title>
+<meta name="description" content="Data Scientist et GenAI Engineer. Machine learning, IA générative, mise en production. CV, projets publics, contact.">
+<meta name="theme-color" content="#111013">
+<meta property="og:title" content="Mahé Begnis, Data Scientist &amp; GenAI Engineer">
+<meta property="og:description" content="Machine learning, IA générative, mise en production. CV, projets publics, contact.">
+<meta property="og:type" content="profile">
+<link rel="preload" href="fonts/IBMPlexSans.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='7' fill='%23111013'/><text x='16' y='22' font-family='sans-serif' font-size='14' font-weight='700' fill='%23E3B341' text-anchor='middle'>MB</text></svg>">
+<style>
+@font-face{font-family:'IBM Plex Sans';font-style:normal;font-weight:100 700;font-display:swap;
+  src:url('fonts/IBMPlexSans.woff2') format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;}
+@font-face{font-family:'IBM Plex Mono';font-style:normal;font-weight:400;font-display:swap;
+  src:url('fonts/IBMPlexMono-400.woff2') format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;}
+@font-face{font-family:'IBM Plex Mono';font-style:normal;font-weight:600;font-display:swap;
+  src:url('fonts/IBMPlexMono-600.woff2') format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;}
+:root{
+  --bg:#111013; --soft:#16151A; --surf:#1B1A20; --surf2:#232128;
+  --line:rgba(206,199,186,.14); --line2:rgba(206,199,186,.28);
+  --tx:#F3F1EC; --dim:#C2BDB3; --mut:#8B867D;
+  --amber:#E3B341; --mint:#6FD3C0; --clay:#E08A6E;
+  --r:12px; --maxw:1060px;
+  --mono:'IBM Plex Mono',ui-monospace,Menlo,monospace;
+  --sans:'IBM Plex Sans',system-ui,sans-serif;
+}
+*{box-sizing:border-box}
+a{color:inherit}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--tx);font:16px/1.6 var(--sans);-webkit-font-smoothing:antialiased}
+body::before{content:"";position:fixed;inset:0 0 auto;height:66vh;pointer-events:none;z-index:0;
+  background:radial-gradient(115% 70% at 10% -10%,rgba(227,179,65,.12),transparent 60%),
+             radial-gradient(85% 55% at 94% -4%,rgba(111,211,192,.08),transparent 58%)}
+.w{max-width:var(--maxw);margin:0 auto;padding:0 20px;position:relative;z-index:1}
+
+nav{position:sticky;top:0;z-index:50;background:rgba(17,16,19,.84);
+    backdrop-filter:saturate(160%) blur(12px);border-bottom:1px solid var(--line)}
+.nv{display:flex;align-items:center;height:56px}
+.brand{font-family:var(--mono);font-size:.88rem;font-weight:600;letter-spacing:.06em;text-decoration:none}
+.brand i{color:var(--amber);font-style:normal}
+.nl{display:none;gap:1.4rem;margin:0 auto;font-size:.87rem}
+.nl a{text-decoration:none;color:var(--dim)}
+.nl a:hover{color:var(--tx)}
+.ncv{margin-left:auto;text-decoration:none;font-size:.83rem;font-weight:600;
+     background:var(--amber);color:#17140C;padding:.46rem .85rem;border-radius:7px}
+@media(min-width:800px){.nl{display:flex}}
+
+.k{font-family:var(--mono);font-size:.75rem;letter-spacing:.1em;color:var(--mut);margin:0 0 .55rem}
+.k b{color:var(--amber);font-weight:600}
+
+header{padding:3rem 0 2rem}
+h1{font-family:var(--sans);font-size:clamp(2.6rem,11vw,4.5rem);line-height:.95;letter-spacing:-.04em;
+   font-weight:700;margin:.15rem 0 .8rem}
+h1 span{display:block;font-weight:200;color:var(--dim)}
+.role{font-size:1rem;color:var(--dim);margin:0 0 1.1rem}
+.role b{color:var(--tx);font-weight:600}
+.pl{display:flex;flex-wrap:wrap;gap:.35rem;margin:0 0 1.3rem;padding:0;list-style:none}
+.pl li{font-family:var(--mono);font-size:.72rem;color:var(--dim);border:1px solid var(--line);
+       background:var(--soft);padding:.28rem .56rem;border-radius:999px}
+.lede{font-size:1.02rem;color:var(--dim);max-width:35rem;margin:0 0 1.6rem}
+.lede b{color:var(--tx);font-weight:600}
+.act{display:flex;flex-wrap:wrap;gap:.55rem}
+.b{display:inline-flex;align-items:baseline;gap:.45rem;text-decoration:none;font-weight:600;font-size:.94rem;
+   padding:.78rem 1.2rem;border-radius:9px;border:1px solid transparent}
+.b1{background:var(--amber);color:#17140C}
+.b2{color:var(--tx);border-color:var(--line2)}
+.b small{font-weight:400;opacity:.6;font-size:.76rem;font-family:var(--mono)}
+
+.hero{display:grid;gap:2.2rem}
+@media(min-width:940px){
+  .hero{grid-template-columns:1.1fr .9fr;gap:3.2rem;align-items:start}
+  .hero .st{margin:.35rem 0 0;grid-template-columns:1fr}
+  .hero .st div{padding:1.05rem 1.1rem}
+  .hero .st dt{font-size:1.55rem}
+  .hero .st dd{font-size:.79rem}
+}
+.st{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line);
+    border:1px solid var(--line);border-radius:var(--r);overflow:hidden;margin:2.3rem 0 0}
+.st div{background:var(--soft);padding:.95rem .8rem}
+.st dt{font-size:1.3rem;font-weight:700;letter-spacing:-.02em;color:var(--amber);
+       font-variant-numeric:tabular-nums;margin:0 0 .1rem}
+.st dd{margin:0;font-size:.76rem;color:var(--mut);line-height:1.35}
+
+section{padding:3.2rem 0 0}
+h2{font-size:clamp(1.4rem,4.4vw,1.85rem);letter-spacing:-.025em;font-weight:700;margin:0 0 1.4rem}
+.g{display:grid;gap:.8rem}
+@media(min-width:720px){.g3{grid-template-columns:repeat(3,1fr)}.g2{grid-template-columns:repeat(2,1fr)}}
+.c{background:var(--surf);border:1px solid var(--line);border-radius:var(--r);padding:1.1rem 1.15rem;
+   position:relative;overflow:hidden;text-decoration:none;color:inherit;display:block}
+.c::before{content:"";position:absolute;inset:0 auto 0 0;width:3px;background:var(--h,var(--amber))}
+.c h3{font-size:.98rem;font-weight:600;margin:0 0 .35rem;letter-spacing:-.01em}
+.c p{font-size:.88rem;color:var(--dim);margin:0 0 .7rem}
+.pf{font-family:var(--mono);font-size:.75rem;color:var(--h,var(--amber));margin:0 0 .6rem;
+    font-variant-numeric:tabular-nums}
+.tg{display:flex;flex-wrap:wrap;gap:.28rem;margin:0;padding:0;list-style:none}
+.tg li{font-family:var(--mono);font-size:.68rem;color:var(--mut);border:1px solid var(--line);
+       padding:.16rem .42rem;border-radius:5px}
+.go{font-family:var(--mono);font-size:.72rem;color:var(--mut);margin-top:.75rem;display:block;word-break:break-all}
+@media(hover:hover){.c:hover{border-color:var(--line2);background:var(--surf2)}}
+
+.rw{list-style:none;margin:0;padding:0;border-top:1px solid var(--line)}
+.rw li{border-bottom:1px solid var(--line);padding:.8rem .1rem;display:grid;gap:.1rem}
+.rw b{font-size:.93rem;font-weight:600}
+.rw span{font-size:.85rem;color:var(--dim)}
+.rw em{font-family:var(--mono);font-style:normal;font-size:.72rem;color:var(--mut);display:block;margin-top:.15rem}
+@media(min-width:760px){.rw li{grid-template-columns:16rem 1fr;gap:1.4rem;align-items:baseline}
+                        .rw em{margin-top:.25rem}}
+
+.tl{list-style:none;margin:0;padding:0 0 0 1.1rem;border-left:1px solid var(--line)}
+.tl li{position:relative;padding:0 0 1.1rem}
+.tl li::before{content:"";position:absolute;left:-1.38rem;top:.45rem;width:7px;height:7px;border-radius:50%;
+               background:var(--amber);box-shadow:0 0 0 3px var(--bg)}
+.tl time{font-family:var(--mono);font-size:.72rem;color:var(--mut);display:block}
+.tl b{font-size:.92rem;font-weight:600;display:block}
+.tl span{font-size:.84rem;color:var(--dim)}
+
+.ct{display:grid;gap:.65rem}
+@media(min-width:720px){.ct{grid-template-columns:repeat(3,1fr)}}
+.ct a{background:var(--surf);border:1px solid var(--line);border-radius:var(--r);padding:.95rem 1.05rem;
+      text-decoration:none;display:block}
+.ct em{font-family:var(--mono);font-style:normal;font-size:.7rem;color:var(--mut);display:block;
+       margin-bottom:.22rem;letter-spacing:.08em}
+.ct b{font-size:.89rem;font-weight:600;word-break:break-word}
+@media(hover:hover){.ct a:hover{border-color:var(--line2);background:var(--surf2)}}
+
+footer{margin-top:3.4rem;padding:1.3rem 0 2.4rem;border-top:1px solid var(--line);
+       font-family:var(--mono);font-size:.73rem;color:var(--mut);display:flex;flex-wrap:wrap;gap:.4rem 1.4rem}
+:focus-visible{outline:2px solid var(--amber);outline-offset:3px;border-radius:4px}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+
+<nav><div class="w nv">
+  <a class="brand" href="#top">MB<i>.</i></a>
+  <div class="nl"><a href="#profil">Profil</a><a href="#projets">Projets</a><a href="#production">Production</a><a href="#parcours">Parcours</a><a href="#contact">Contact</a></div>
+  <a class="ncv" href="CV_Mahe_Begnis.pdf">Le CV</a>
+</div></nav>
+
+<header id="top"><div class="w hero">
+ <div>
+  <p class="k"><b>//</b> data scientist &amp; genai engineer</p>
+  <h1>Mahé<span>Begnis</span></h1>
+  <p class="role">Machine learning, IA générative, mise en production. <b>Lille</b>, mobilité Lille et Paris.</p>
+  <ul class="pl"><li>Machine learning</li><li>RAG</li><li>Agents</li><li>MCP</li><li>Python</li><li>GCP</li><li>Kubernetes</li><li>RGPD</li></ul>
+  <p class="lede">Deux ans d’alternance en conseil IA, en fin de Master Data &amp; IA. Je livre des solutions
+    utilisées au quotidien chez des clients industriels, du retail et de la formation.
+    <b>Une référence de comparaison, une métrique, un jeu de test.</b></p>
+  <div class="act">
+    <a class="b b1" href="CV_Mahe_Begnis.pdf">Consulter le CV <small>PDF, 2 p.</small></a>
+    <a class="b b2" href="https://github.com/mahebegnis">Voir les projets</a>
+  </div>
+ </div>
+  <dl class="st">
+    <div><dt>2 ans</dt><dd>d’alternance en conseil IA</dd></div>
+    <div><dt>7,17 M</dt><dd>lignes de ventes modélisées</dd></div>
+    <div><dt>64</dt><dd>outils métier exposés via MCP</dd></div>
+  </dl>
+</div></header>
+
+<section id="profil"><div class="w">
+  <p class="k"><b>01</b> / ce que je fais</p>
+  <h2>Trois registres, une même méthode</h2>
+  <div class="g g3">
+    <article class="c" style="--h:var(--amber)">
+      <h3>Machine learning</h3>
+      <p class="pf">WAPE 0,201, soit 3 fois le processus en place</p>
+      <p>Prévision de la demande sur un réseau de 40 magasins. Séries temporelles, modèles à deux étages, validation temporelle.</p>
+      <ul class="tg"><li>LightGBM</li><li>CatBoost</li><li>XGBoost</li><li>scikit-learn</li></ul>
+    </article>
+    <article class="c" style="--h:var(--mint)">
+      <h3>IA générative et production</h3>
+      <p class="pf">déployé et maintenu sur Kubernetes</p>
+      <p>Agents RAG connectés aux ERP, serveurs MCP, chaînes d’extraction documentaire.</p>
+      <ul class="tg"><li>Vertex AI</li><li>FastAPI</li><li>Docker</li><li>PostgreSQL</li></ul>
+    </article>
+    <article class="c" style="--h:var(--clay)">
+      <h3>Démarche de recherche</h3>
+      <p class="pf">AUC 0,996 sur jeu de test isolé</p>
+      <p>Protocoles d’évaluation reproductibles. Jeu de test touché une seule fois, revue de littérature PRISMA.</p>
+      <ul class="tg"><li>PRISMA 2020</li><li>test de DeLong</li><li>validation croisée</li></ul>
+    </article>
+  </div>
+</div></section>
+
+<section id="projets"><div class="w">
+  <p class="k"><b>02</b> / code ouvert</p>
+  <h2>Projets publics</h2>
+  <div class="g g2">
+    <a class="c" style="--h:var(--clay)" href="https://github.com/mahebegnis/variants-genetiques-ml">
+      <h3>Classification de variants génétiques</h3>
+      <p class="pf">AUC 0,996, 8 modèles comparés, test de DeLong</p>
+      <p>Pathogénicité des variants et désaccords de classification entre laboratoires, sur données ClinVar.
+         Valeurs manquantes MNAR conservées. Jeu de test holdout touché une seule fois.</p>
+      <ul class="tg"><li>Python</li><li>XGBoost</li><li>ClinVar</li><li>65 188 variants</li></ul>
+      <span class="go">github.com/mahebegnis/variants-genetiques-ml</span>
+    </a>
+    <a class="c" style="--h:var(--mint)" href="https://github.com/mahebegnis/prisma-digital-twins-smart-buildings">
+      <h3>Revue systématique PRISMA 2020</h3>
+      <p class="pf">704 références, 45 études incluses</p>
+      <p>Jumeaux numériques pour l’optimisation énergétique des bâtiments. Présélection assistée par LLM,
+         validation manuelle. Pipeline Python, article IEEE de 29 pages.</p>
+      <ul class="tg"><li>PRISMA 2020</li><li>Python</li><li>IEEE</li><li>CC BY 4.0</li></ul>
+      <span class="go">github.com/mahebegnis/prisma-digital-twins-smart-buildings</span>
+    </a>
+  </div>
+</div></section>
+
+<section id="production"><div class="w">
+  <p class="k"><b>03</b> / chez des clients</p>
+  <h2>Solutions en production</h2>
+  <ul class="rw">
+    <li><b>Agent IA de service après-vente</b><span>Base documentaire RAG et API ERP temps réel interrogées en parallèle. Réponses sourcées.<em>industrie de la menuiserie</em></span></li>
+    <li><b>Serveur MCP de pilotage</b><span>64 outils métier exposés à un modèle de langage, dont 14 générateurs de documents réglementaires.<em>outil interne</em></span></li>
+    <li><b>Service d’auto-diagnostic IA</b><span>De la conception au déploiement. 28 contrôles automatiques dont 17 bloquants avant envoi.<em>produit interne</em></span></li>
+    <li><b>Classification documentaire</b><span>43 classes sur 108 documents réels, F1 0,957. BigQuery en région UE, données sensibles.<em>organisme de formation</em></span></li>
+    <li><b>Automatisation documentaire</b><span>Génération des contrats pédagogiques, application web de validation, intégration SharePoint.<em>formation professionnelle</em></span></li>
+  </ul>
+</div></section>
+
+<section id="parcours"><div class="w">
+  <p class="k"><b>04</b> / parcours</p>
+  <h2>Formation et expérience</h2>
+  <div class="g g2">
+    <ul class="tl">
+      <li><time>2025 à 2027</time><b>Six and See, Développeur IA / Data Scientist</b><span>Alternance. Projets clients en large autonomie, du cadrage à la recette.</span></li>
+      <li><time>2025</time><b>Observatoire de la Cybersécurité de l’Océan Indien</b><span>Stage. Plateforme d’alerting, APIs Shodan et Censys, PostgreSQL.</span></li>
+      <li><time>2023 à 2024</time><b>Groupe Les Flamboyants</b><span>Stage. Déploiement d’une solution EDR en milieu hospitalier.</span></li>
+    </ul>
+    <ul class="tl">
+      <li><time>2025 à 2027</time><b>Master Informatique, parcours Data et IA</b><span>École du Numérique, FGES, Université Catholique de Lille.</span></li>
+      <li><time>2023 à 2025</time><b>Cycle ingénieur informatique, ESIROI</b><span>Réorientation vers une spécialisation Data et IA en alternance.</span></li>
+      <li><time>2024 à 2025</time><b>SecNumEdu (ANSSI), Atelier RGPD (CNIL)</b><span>1re place nationale à la Nuit de l’Informatique, défi Ubisoft.</span></li>
+    </ul>
+  </div>
+</div></section>
+
+<section id="contact"><div class="w">
+  <p class="k"><b>05</b> / contact</p>
+  <h2>Écrivez-moi</h2>
+  <div class="ct">
+    <a href="mailto:mahebegnis9@gmail.com"><em>EMAIL</em><b>mahebegnis9@gmail.com</b></a>
+    <a href="https://www.linkedin.com/in/mahebegnis/"><em>LINKEDIN</em><b>/in/mahebegnis</b></a>
+    <a href="https://github.com/mahebegnis"><em>GITHUB</em><b>@mahebegnis</b></a>
+  </div>
+  <footer><span>2026 Mahé Begnis</span><span>Sans cookie, sans script, sans mesure d’audience.</span></footer>
+</div></section>
+
+</body>
+</html>
