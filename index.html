@@ -3,250 +3,379 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Mahé Begnis, Data Scientist &amp; GenAI Engineer</title>
-<meta name="description" content="Data Scientist et GenAI Engineer. Machine learning, IA générative, mise en production. CV, projets publics, contact.">
-<meta name="theme-color" content="#111013">
-<meta property="og:title" content="Mahé Begnis, Data Scientist &amp; GenAI Engineer">
-<meta property="og:description" content="Machine learning, IA générative, mise en production. CV, projets publics, contact.">
+<title>Mahé Begnis, data scientist et GenAI engineer</title>
+<meta name="description" content="Data scientist et GenAI engineer à Lille. Machine learning, IA générative et mise en production. CV, projets publics et contact.">
+<meta name="theme-color" content="#070A17">
+<meta property="og:title" content="Mahé Begnis, data scientist et GenAI engineer">
+<meta property="og:description" content="Machine learning, IA générative et mise en production. CV, projets publics et contact.">
 <meta property="og:type" content="profile">
-<link rel="preload" href="fonts/IBMPlexSans.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='7' fill='%23111013'/><text x='16' y='22' font-family='sans-serif' font-size='14' font-weight='700' fill='%23E3B341' text-anchor='middle'>MB</text></svg>">
+<link rel="preload" href="fonts/InstrumentSerif-normal-400.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="fonts/InstrumentSans-normal-400_700.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='6' fill='%23070A17'/><text x='16' y='23' font-family='Georgia,serif' font-style='italic' font-size='19' fill='%23A38BFF' text-anchor='middle'>M</text></svg>">
 <style>
-@font-face{font-family:'IBM Plex Sans';font-style:normal;font-weight:100 700;font-display:swap;
-  src:url('fonts/IBMPlexSans.woff2') format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;}
-@font-face{font-family:'IBM Plex Mono';font-style:normal;font-weight:400;font-display:swap;
-  src:url('fonts/IBMPlexMono-400.woff2') format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;}
-@font-face{font-family:'IBM Plex Mono';font-style:normal;font-weight:600;font-display:swap;
-  src:url('fonts/IBMPlexMono-600.woff2') format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;}
+@font-face{font-family:'Instrument Serif';font-style:normal;font-weight:400;font-display:swap;src:url('fonts/InstrumentSerif-normal-400.woff2') format('woff2')}
+@font-face{font-family:'Instrument Serif';font-style:italic;font-weight:400;font-display:swap;src:url('fonts/InstrumentSerif-italic-400.woff2') format('woff2')}
+@font-face{font-family:'Instrument Sans';font-style:normal;font-weight:400 700;font-display:swap;src:url('fonts/InstrumentSans-normal-400_700.woff2') format('woff2')}
+
 :root{
-  --bg:#111013; --soft:#16151A; --surf:#1B1A20; --surf2:#232128;
-  --line:rgba(206,199,186,.14); --line2:rgba(206,199,186,.28);
-  --tx:#F3F1EC; --dim:#C2BDB3; --mut:#8B867D;
-  --amber:#E3B341; --mint:#6FD3C0; --clay:#E08A6E;
-  --r:12px; --maxw:1060px;
-  --mono:'IBM Plex Mono',ui-monospace,Menlo,monospace;
-  --sans:'IBM Plex Sans',system-ui,sans-serif;
+  --nuit:#070A17; --encre:#0E1330; --voile:rgba(150,165,255,.16); --voile-fort:rgba(150,165,255,.32);
+  --texte:#EEF0FA; --attenue:#9AA3C7; --discret:#7B85AE;
+  --bleu:#5D7CFF; --pervenche:#9D7BFF; --mauve:#C79CFF;
+  --degrade:linear-gradient(100deg,var(--bleu) 0%,var(--pervenche) 55%,var(--mauve) 100%);
+  --serif:'Instrument Serif',Georgia,'Times New Roman',serif;
+  --sans:'Instrument Sans',Helvetica,Arial,sans-serif;
+  --col:1180px;
 }
 *{box-sizing:border-box}
-a{color:inherit}
 html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
-body{margin:0;background:var(--bg);color:var(--tx);font:16px/1.6 var(--sans);-webkit-font-smoothing:antialiased}
-body::before{content:"";position:fixed;inset:0 0 auto;height:66vh;pointer-events:none;z-index:0;
-  background:radial-gradient(115% 70% at 10% -10%,rgba(227,179,65,.12),transparent 60%),
-             radial-gradient(85% 55% at 94% -4%,rgba(111,211,192,.08),transparent 58%)}
-.w{max-width:var(--maxw);margin:0 auto;padding:0 20px;position:relative;z-index:1}
+body{margin:0;background:var(--nuit);color:var(--texte);font:400 1rem/1.6 var(--sans);-webkit-font-smoothing:antialiased}
+@media(min-width:900px){body{font-size:1.0625rem}}
+body::before{content:"";position:fixed;inset:0;z-index:0;pointer-events:none;
+  background:
+    radial-gradient(60% 45% at 8% 0%,rgba(93,124,255,.22),transparent 70%),
+    radial-gradient(45% 40% at 96% 12%,rgba(199,156,255,.16),transparent 70%),
+    radial-gradient(70% 50% at 50% 110%,rgba(157,123,255,.10),transparent 70%)}
+.col{position:relative;z-index:1;max-width:var(--col);margin:0 auto;padding:0 clamp(20px,4vw,48px)}
+a{color:inherit;text-decoration-color:var(--voile-fort);text-underline-offset:.18em}
+a:hover{text-decoration-color:var(--mauve)}
+:focus-visible{outline:2px solid var(--pervenche);outline-offset:4px}
+h1,h2,h3,.chiffre,.ital{font-family:var(--serif);font-weight:400;letter-spacing:-.01em}
+p{margin:0}
+ul{margin:0;padding:0;list-style:none}
 
-nav{position:sticky;top:0;z-index:50;background:rgba(17,16,19,.84);
-    backdrop-filter:saturate(160%) blur(12px);border-bottom:1px solid var(--line)}
-.nv{display:flex;align-items:center;height:56px}
-.brand{font-family:var(--mono);font-size:.88rem;font-weight:600;letter-spacing:.06em;text-decoration:none}
-.brand i{color:var(--amber);font-style:normal}
-.nl{display:none;gap:1.4rem;margin:0 auto;font-size:.87rem}
-.nl a{text-decoration:none;color:var(--dim)}
-.nl a:hover{color:var(--tx)}
-.ncv{margin-left:auto;text-decoration:none;font-size:.83rem;font-weight:600;
-     background:var(--amber);color:#17140C;padding:.46rem .85rem;border-radius:7px}
-@media(min-width:800px){.nl{display:flex}}
+/* barre */
+.barre{position:sticky;top:0;z-index:20;background:rgba(7,10,23,.78);backdrop-filter:blur(14px) saturate(140%);border-bottom:1px solid var(--voile)}
+.barre .col{display:flex;align-items:center;gap:1.5rem;height:60px}
+.marque{font-family:var(--serif);font-style:italic;font-size:1.25rem;text-decoration:none}
+.liens{display:none;gap:1.6rem;margin-left:auto;font-size:.93rem;color:var(--attenue)}
+.liens a{text-decoration:none}
+.liens a:hover{color:var(--texte)}
+@media(min-width:900px){.liens{display:flex}}
+.cv-b{margin-left:auto;text-decoration:none;font-weight:600;font-size:.9rem;color:var(--nuit);background:var(--texte);padding:.5rem 1.05rem;border-radius:999px;white-space:nowrap}
+@media(min-width:900px){.liens + .cv-b{margin-left:0}}
 
-.k{font-family:var(--mono);font-size:.75rem;letter-spacing:.1em;color:var(--mut);margin:0 0 .55rem}
-.k b{color:var(--amber);font-weight:600}
+/* hero */
+.hero{padding:clamp(3.2rem,9vw,7rem) 0 clamp(2.4rem,5vw,4rem)}
+.hero h1{font-size:clamp(3.4rem,13vw,9.5rem);line-height:.9;margin:0 0 .35em;letter-spacing:-.025em}
+.sous{font-family:var(--serif);font-style:italic;font-size:clamp(1.6rem,4.6vw,3rem);line-height:1.1;margin:0 0 1.6rem;
+      background:var(--degrade);-webkit-background-clip:text;background-clip:text;color:transparent;display:inline-block;padding-right:.15em}
+.deux{display:grid;gap:2rem}
+@media(min-width:900px){.deux{grid-template-columns:7fr 5fr;gap:4rem;align-items:end}}
+.lede{font-size:clamp(1.05rem,1.6vw,1.2rem);line-height:1.55;max-width:62ch;color:var(--texte)}
+.lede + .lede{margin-top:1rem;color:var(--attenue)}
+.actions{display:flex;flex-wrap:wrap;gap:.7rem;margin-top:1.8rem}
+.b{display:inline-flex;align-items:center;gap:.6rem;text-decoration:none;font-weight:600;font-size:.98rem;padding:.85rem 1.35rem;border-radius:999px;border:1px solid transparent}
+.b-1{background:var(--texte);color:var(--nuit)}
+.b-2{border-color:var(--voile-fort);color:var(--texte)}
+.b-1:hover{background:#fff}.b-2:hover{border-color:var(--mauve)}
+.faits{display:grid;grid-template-columns:1fr 1fr;border-top:1px solid var(--voile)}
+.faits div{padding:1.1rem 0 1.1rem;border-bottom:1px solid var(--voile)}
+.faits div:nth-child(odd){padding-right:1.2rem;border-right:1px solid var(--voile)}
+.faits div:nth-child(even){padding-left:1.2rem}
+.chiffre{font-size:clamp(1.9rem,3vw,2.5rem);line-height:1;display:block;margin-bottom:.35rem;font-variant-numeric:tabular-nums}
+.faits small{font-size:.86rem;color:var(--attenue);line-height:1.35;display:block}
 
-header{padding:3rem 0 2rem}
-h1{font-family:var(--sans);font-size:clamp(2.6rem,11vw,4.5rem);line-height:.95;letter-spacing:-.04em;
-   font-weight:700;margin:.15rem 0 .8rem}
-h1 span{display:block;font-weight:200;color:var(--dim)}
-.role{font-size:1rem;color:var(--dim);margin:0 0 1.1rem}
-.role b{color:var(--tx);font-weight:600}
-.pl{display:flex;flex-wrap:wrap;gap:.35rem;margin:0 0 1.3rem;padding:0;list-style:none}
-.pl li{font-family:var(--mono);font-size:.72rem;color:var(--dim);border:1px solid var(--line);
-       background:var(--soft);padding:.28rem .56rem;border-radius:999px}
-.lede{font-size:1.02rem;color:var(--dim);max-width:35rem;margin:0 0 1.6rem}
-.lede b{color:var(--tx);font-weight:600}
-.act{display:flex;flex-wrap:wrap;gap:.55rem}
-.b{display:inline-flex;align-items:baseline;gap:.45rem;text-decoration:none;font-weight:600;font-size:.94rem;
-   padding:.78rem 1.2rem;border-radius:9px;border:1px solid transparent}
-.b1{background:var(--amber);color:#17140C}
-.b2{color:var(--tx);border-color:var(--line2)}
-.b small{font-weight:400;opacity:.6;font-size:.76rem;font-family:var(--mono)}
+/* apparition au chargement, une seule fois */
+.rv{opacity:0;transform:translateY(14px);animation:rv .9s cubic-bezier(.2,.7,.2,1) forwards}
+.rv:nth-child(2){animation-delay:.12s}.rv:nth-child(3){animation-delay:.24s}
+.deux.rv{animation-delay:.36s}
+@keyframes rv{to{opacity:1;transform:none}}
+@media(prefers-reduced-motion:reduce){.rv{animation:none;opacity:1;transform:none}html{scroll-behavior:auto}}
 
-.hero{display:grid;gap:2.2rem}
-@media(min-width:940px){
-  .hero{grid-template-columns:1.1fr .9fr;gap:3.2rem;align-items:start}
-  .hero .st{margin:.35rem 0 0;grid-template-columns:1fr}
-  .hero .st div{padding:1.05rem 1.1rem}
-  .hero .st dt{font-size:1.55rem}
-  .hero .st dd{font-size:.79rem}
-}
-.st{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line);
-    border:1px solid var(--line);border-radius:var(--r);overflow:hidden;margin:2.3rem 0 0}
-.st div{background:var(--soft);padding:.95rem .8rem}
-.st dt{font-size:1.3rem;font-weight:700;letter-spacing:-.02em;color:var(--amber);
-       font-variant-numeric:tabular-nums;margin:0 0 .1rem}
-.st dd{margin:0;font-size:.76rem;color:var(--mut);line-height:1.35}
+/* sections */
+section{padding:clamp(3.4rem,7vw,6rem) 0 0;border-top:1px solid var(--voile)}
+section > .col > h2{font-size:clamp(2.1rem,4.8vw,3.4rem);line-height:1.05;margin:0 0 .5rem}
+.intro{color:var(--attenue);max-width:62ch;margin:0 0 clamp(2rem,4vw,3rem)}
 
-section{padding:3.2rem 0 0}
-h2{font-size:clamp(1.4rem,4.4vw,1.85rem);letter-spacing:-.025em;font-weight:700;margin:0 0 1.4rem}
-.g{display:grid;gap:.8rem}
-@media(min-width:720px){.g3{grid-template-columns:repeat(3,1fr)}.g2{grid-template-columns:repeat(2,1fr)}}
-.c{background:var(--surf);border:1px solid var(--line);border-radius:var(--r);padding:1.1rem 1.15rem;
-   position:relative;overflow:hidden;text-decoration:none;color:inherit;display:block}
-.c::before{content:"";position:absolute;inset:0 auto 0 0;width:3px;background:var(--h,var(--amber))}
-.c h3{font-size:.98rem;font-weight:600;margin:0 0 .35rem;letter-spacing:-.01em}
-.c p{font-size:.88rem;color:var(--dim);margin:0 0 .7rem}
-.pf{font-family:var(--mono);font-size:.75rem;color:var(--h,var(--amber));margin:0 0 .6rem;
-    font-variant-numeric:tabular-nums}
-.tg{display:flex;flex-wrap:wrap;gap:.28rem;margin:0;padding:0;list-style:none}
-.tg li{font-family:var(--mono);font-size:.68rem;color:var(--mut);border:1px solid var(--line);
-       padding:.16rem .42rem;border-radius:5px}
-.go{font-family:var(--mono);font-size:.72rem;color:var(--mut);margin-top:.75rem;display:block;word-break:break-all}
-@media(hover:hover){.c:hover{border-color:var(--line2);background:var(--surf2)}}
+/* registre des compétences */
+.reg{border-top:1px solid var(--voile)}
+.reg > div{display:grid;gap:.6rem;padding:1.5rem 0;border-bottom:1px solid var(--voile)}
+@media(min-width:900px){.reg > div{grid-template-columns:4fr 8fr;gap:3rem;padding:2rem 0}}
+.reg h3{font-size:clamp(1.5rem,2.4vw,1.95rem);line-height:1.15;margin:0}
+.reg p{color:var(--attenue);max-width:70ch}
+.reg p b{color:var(--texte);font-weight:500}
+.reg p + p{margin-top:.55rem}
 
-.rw{list-style:none;margin:0;padding:0;border-top:1px solid var(--line)}
-.rw li{border-bottom:1px solid var(--line);padding:.8rem .1rem;display:grid;gap:.1rem}
-.rw b{font-size:.93rem;font-weight:600}
-.rw span{font-size:.85rem;color:var(--dim)}
-.rw em{font-family:var(--mono);font-style:normal;font-size:.72rem;color:var(--mut);display:block;margin-top:.15rem}
-@media(min-width:760px){.rw li{grid-template-columns:16rem 1fr;gap:1.4rem;align-items:baseline}
-                        .rw em{margin-top:.25rem}}
+/* dossiers de projets */
+.dossier{display:grid;gap:1.6rem;padding:clamp(2.2rem,4.5vw,3.6rem) 0;border-bottom:1px solid var(--voile)}
+.dossier:last-child{border-bottom:0}
+@media(min-width:900px){.dossier{grid-template-columns:5fr 7fr;gap:4rem}.dossier > .g{position:sticky;top:5rem;align-self:start}}
+.dossier h3{font-size:clamp(1.75rem,3vw,2.5rem);line-height:1.08;margin:0 0 .5rem}
+.dossier h3 a{text-decoration:none}
+.dossier h3 a:hover{text-decoration:underline;text-decoration-color:var(--mauve)}
+.ctx{color:var(--attenue);margin:0 0 1.4rem;max-width:44ch}
+.met{display:grid;grid-template-columns:1fr 1fr;gap:0 1.4rem;border-top:1px solid var(--voile);margin:0}
+.met > div{padding:.9rem 0;border-bottom:1px solid var(--voile)}
+.met dd{margin:0}
+.met .chiffre{font-size:clamp(1.7rem,2.4vw,2.2rem);margin-bottom:.25rem}
+.met small{font-size:.84rem;color:var(--attenue);line-height:1.35;display:block}
+.faits-l{border-top:1px solid var(--voile)}
+.faits-l li{padding:.95rem 0;border-bottom:1px solid var(--voile);color:var(--attenue);max-width:70ch}
+.faits-l li b{color:var(--texte);font-weight:500}
+.pile{margin-top:1rem;font-size:.9rem;color:var(--discret)}
+.pile b{font-weight:500;color:var(--attenue)}
 
-.tl{list-style:none;margin:0;padding:0 0 0 1.1rem;border-left:1px solid var(--line)}
-.tl li{position:relative;padding:0 0 1.1rem}
-.tl li::before{content:"";position:absolute;left:-1.38rem;top:.45rem;width:7px;height:7px;border-radius:50%;
-               background:var(--amber);box-shadow:0 0 0 3px var(--bg)}
-.tl time{font-family:var(--mono);font-size:.72rem;color:var(--mut);display:block}
-.tl b{font-size:.92rem;font-weight:600;display:block}
-.tl span{font-size:.84rem;color:var(--dim)}
+/* entonnoir PRISMA */
+.ent{border-top:1px solid var(--voile);margin-top:.4rem}
+.ent li{display:grid;grid-template-columns:4.2rem 1fr;gap:1rem;align-items:center;padding:.7rem 0;border-bottom:1px solid var(--voile)}
+.ent .chiffre{font-size:1.55rem;margin:0}
+.ent i{display:block;height:9px;border-radius:2px;background:var(--degrade);opacity:.85;width:var(--w)}
+.ent small{display:block;color:var(--attenue);font-size:.86rem;margin-top:.35rem;line-height:1.35}
 
-.ct{display:grid;gap:.65rem}
-@media(min-width:720px){.ct{grid-template-columns:repeat(3,1fr)}}
-.ct a{background:var(--surf);border:1px solid var(--line);border-radius:var(--r);padding:.95rem 1.05rem;
-      text-decoration:none;display:block}
-.ct em{font-family:var(--mono);font-style:normal;font-size:.7rem;color:var(--mut);display:block;
-       margin-bottom:.22rem;letter-spacing:.08em}
-.ct b{font-size:.89rem;font-weight:600;word-break:break-word}
-@media(hover:hover){.ct a:hover{border-color:var(--line2);background:var(--surf2)}}
+/* liste compacte */
+.compact li{padding:1.1rem 0;border-bottom:1px solid var(--voile);display:grid;gap:.25rem}
+@media(min-width:900px){.compact li{grid-template-columns:5fr 7fr;gap:4rem}}
+.compact b{font-family:var(--serif);font-weight:400;font-size:1.35rem;line-height:1.15}
+.compact span{color:var(--attenue)}
+.compact em{font-style:normal;color:var(--discret);display:block;font-size:.9rem;margin-top:.25rem}
 
-footer{margin-top:3.4rem;padding:1.3rem 0 2.4rem;border-top:1px solid var(--line);
-       font-family:var(--mono);font-size:.73rem;color:var(--mut);display:flex;flex-wrap:wrap;gap:.4rem 1.4rem}
-:focus-visible{outline:2px solid var(--amber);outline-offset:3px;border-radius:4px}
-@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+/* parcours */
+.par{display:grid;gap:2.4rem}
+@media(min-width:900px){.par{grid-template-columns:1fr 1fr;gap:4rem}}
+.par h3{font-size:1.6rem;margin:0 0 .6rem}
+.par li{padding:1rem 0;border-top:1px solid var(--voile);display:grid;grid-template-columns:7.2rem 1fr;gap:1rem}
+.par li:last-child{border-bottom:1px solid var(--voile)}
+.par time{color:var(--discret);font-size:.9rem;padding-top:.15rem;font-variant-numeric:tabular-nums}
+.par b{font-weight:600;display:block}
+.par span{color:var(--attenue);display:block}
+
+/* contact */
+.contact h2{font-size:clamp(2.6rem,7vw,5.5rem);line-height:.95;margin:0 0 1.6rem}
+.contact h2 .ital{font-style:italic;background:var(--degrade);-webkit-background-clip:text;background-clip:text;color:transparent}
+.cl li{border-top:1px solid var(--voile)}
+.cl li:last-child{border-bottom:1px solid var(--voile)}
+.cl a{display:grid;grid-template-columns:7.2rem 1fr;gap:1rem;padding:1.05rem 0;text-decoration:none;font-size:1.05rem}
+.cl a span:first-child{color:var(--discret)}
+.cl a:hover span:last-child{text-decoration:underline;text-decoration-color:var(--mauve)}
+footer{padding:2.4rem 0 3rem;color:var(--discret);font-size:.88rem;display:flex;flex-wrap:wrap;gap:.4rem 2rem}
 </style>
 </head>
 <body>
 
-<nav><div class="w nv">
-  <a class="brand" href="#top">MB<i>.</i></a>
-  <div class="nl"><a href="#profil">Profil</a><a href="#projets">Projets</a><a href="#production">Production</a><a href="#parcours">Parcours</a><a href="#contact">Contact</a></div>
-  <a class="ncv" href="CV_Mahe_Begnis.pdf">Le CV</a>
-</div></nav>
+<div class="barre"><div class="col">
+  <a class="marque" href="#haut">Mahé Begnis</a>
+  <nav class="liens"><a href="#competences">Compétences</a><a href="#production">Production</a><a href="#code">Code ouvert</a><a href="#parcours">Parcours</a><a href="#contact">Contact</a></nav>
+  <a class="cv-b" href="CV_Mahe_Begnis.pdf">Le CV</a>
+</div></div>
 
-<header id="top"><div class="w hero">
- <div>
-  <p class="k"><b>//</b> data scientist &amp; genai engineer</p>
-  <h1>Mahé<span>Begnis</span></h1>
-  <p class="role">Machine learning, IA générative, mise en production. <b>Lille</b>, mobilité Lille et Paris.</p>
-  <ul class="pl"><li>Machine learning</li><li>RAG</li><li>Agents</li><li>MCP</li><li>Python</li><li>GCP</li><li>Kubernetes</li><li>RGPD</li></ul>
-  <p class="lede">Deux ans d’alternance en conseil IA, en fin de Master Data &amp; IA. Je livre des solutions
-    utilisées au quotidien chez des clients industriels, du retail et de la formation.
-    <b>Une référence de comparaison, une métrique, un jeu de test.</b></p>
-  <div class="act">
-    <a class="b b1" href="CV_Mahe_Begnis.pdf">Consulter le CV <small>PDF, 2 p.</small></a>
-    <a class="b b2" href="https://github.com/mahebegnis">Voir les projets</a>
+<header class="hero" id="haut"><div class="col">
+  <h1 class="rv">Mahé Begnis</h1>
+  <p class="sous rv">Data scientist <span style="font-style:normal">&amp;</span> GenAI engineer</p>
+  <div class="deux rv">
+    <div>
+      <p class="lede">Deux ans d’alternance en cabinet de conseil en intelligence artificielle, en fin de Master Data et IA. Je conçois, développe et mets en production des solutions de machine learning et d’IA générative utilisées au quotidien chez des clients industriels, du retail et de la formation.</p>
+      <p class="lede">Une même exigence partout : une référence de comparaison, une métrique, un jeu de test. Basé à Lille, mobile sur Lille et Paris.</p>
+      <div class="actions">
+        <a class="b b-1" href="CV_Mahe_Begnis.pdf">Consulter le CV</a>
+        <a class="b b-2" href="https://github.com/mahebegnis">Voir le code sur GitHub</a>
+      </div>
+    </div>
+    <div class="faits">
+      <div><span class="chiffre">2 ans</span><small>d’alternance en conseil IA, projets menés en large autonomie</small></div>
+      <div><span class="chiffre">7,17 M</span><small>lignes de ventes modélisées pour la prévision de la demande</small></div>
+      <div><span class="chiffre">64</span><small>outils métier exposés à un modèle de langage via MCP</small></div>
+      <div><span class="chiffre">0,996</span><small>AUC sur jeu de test isolé, classification de variants</small></div>
+    </div>
   </div>
- </div>
-  <dl class="st">
-    <div><dt>2 ans</dt><dd>d’alternance en conseil IA</dd></div>
-    <div><dt>7,17 M</dt><dd>lignes de ventes modélisées</dd></div>
-    <div><dt>64</dt><dd>outils métier exposés via MCP</dd></div>
-  </dl>
 </div></header>
 
-<section id="profil"><div class="w">
-  <p class="k"><b>01</b> / ce que je fais</p>
-  <h2>Trois registres, une même méthode</h2>
-  <div class="g g3">
-    <article class="c" style="--h:var(--amber)">
-      <h3>Machine learning</h3>
-      <p class="pf">WAPE 0,201, soit 3 fois le processus en place</p>
-      <p>Prévision de la demande sur un réseau de 40 magasins. Séries temporelles, modèles à deux étages, validation temporelle.</p>
-      <ul class="tg"><li>LightGBM</li><li>CatBoost</li><li>XGBoost</li><li>scikit-learn</li></ul>
-    </article>
-    <article class="c" style="--h:var(--mint)">
-      <h3>IA générative et production</h3>
-      <p class="pf">déployé et maintenu sur Kubernetes</p>
-      <p>Agents RAG connectés aux ERP, serveurs MCP, chaînes d’extraction documentaire.</p>
-      <ul class="tg"><li>Vertex AI</li><li>FastAPI</li><li>Docker</li><li>PostgreSQL</li></ul>
-    </article>
-    <article class="c" style="--h:var(--clay)">
-      <h3>Démarche de recherche</h3>
-      <p class="pf">AUC 0,996 sur jeu de test isolé</p>
-      <p>Protocoles d’évaluation reproductibles. Jeu de test touché une seule fois, revue de littérature PRISMA.</p>
-      <ul class="tg"><li>PRISMA 2020</li><li>test de DeLong</li><li>validation croisée</li></ul>
-    </article>
+<section id="competences"><div class="col">
+  <h2>Ce que je sais faire</h2>
+  <p class="intro">Les outils sont listés parce qu’ils ont servi sur un projet, pas parce qu’ils figurent dans un programme.</p>
+  <div class="reg">
+    <div><h3>Machine learning</h3>
+      <div><p><b>Apprentissage supervisé.</b> LightGBM, CatBoost, XGBoost, régression linéaire et logistique, SVM à noyau gaussien, k plus proches voisins, scikit-learn.</p>
+      <p><b>Apprentissage non supervisé.</b> k-means, DBSCAN, clustering agglomératif, analyse en composantes principales.</p>
+      <p><b>Séries temporelles.</b> Prévision de la demande, modèles à deux étages pour données à excès de zéros, validation temporelle stricte, analyse d’importance des variables.</p></div></div>
+    <div><h3>Statistiques et préparation des données</h3>
+      <div><p><b>Tests d’hypothèses.</b> Khi-2, test exact de Fisher, ANOVA, tests de normalité.</p>
+      <p><b>Qualité des données.</b> Valeurs manquantes et leurs mécanismes (MCAR, MAR, MNAR), valeurs aberrantes (Isolation Forest, Tukey, DBSCAN), normalisation des variables (standard, min-max, robuste) et des échantillons (Normalizer), encodage, ingénierie de variables.</p>
+      <p><b>Métriques.</b> WAPE, MAE, MASE, biais de prédiction, précision, rappel, F1, AUC, score de silhouette.</p></div></div>
+    <div><h3>IA générative, LLM et NLP</h3>
+      <div><p><b>Architectures RAG.</b> Découpage, recherche hybride, citation des sources, cloisonnement des corpus. Vertex AI Search, ChromaDB.</p>
+      <p><b>Agents.</b> Agents outillés, serveurs MCP, ingénierie et évaluation de prompts, contrôle des hallucinations. Gemini, Claude, GPT, Mistral.</p>
+      <p><b>Traitement du langage.</b> TF-IDF, sac de mots, Word2Vec (CBOW), Naive Bayes, NER-CRF, similarité cosinus.</p></div></div>
+    <div><h3>Données et cloud</h3>
+      <div><p><b>Langages et bases.</b> Python (pandas, numpy), TypeScript, SQL, PostgreSQL, BigQuery.</p>
+      <p><b>Google Cloud.</b> Vertex AI, Agent Builder, Cloud Run, Cloud Functions, Cloud Storage. Microsoft Graph et SharePoint. Looker Studio, Power BI.</p></div></div>
+    <div><h3>Industrialisation et conformité</h3>
+      <div><p><b>Mise en production.</b> FastAPI, Docker, Kubernetes, GitLab, Playwright. Pipelines reproductibles, journalisation structurée, tests de non-régression, suivi des performances.</p>
+      <p><b>Protection des données.</b> RGPD dès la conception : minimisation, pseudonymisation, purge, journal d’audit, résidence des données en Europe. Certifié SecNumEdu (ANSSI) et atelier RGPD (CNIL).</p></div></div>
   </div>
 </div></section>
 
-<section id="projets"><div class="w">
-  <p class="k"><b>02</b> / code ouvert</p>
-  <h2>Projets publics</h2>
-  <div class="g g2">
-    <a class="c" style="--h:var(--clay)" href="https://github.com/mahebegnis/variants-genetiques-ml">
-      <h3>Classification de variants génétiques</h3>
-      <p class="pf">AUC 0,996, 8 modèles comparés, test de DeLong</p>
-      <p>Pathogénicité des variants et désaccords de classification entre laboratoires, sur données ClinVar.
-         Valeurs manquantes MNAR conservées. Jeu de test holdout touché une seule fois.</p>
-      <ul class="tg"><li>Python</li><li>XGBoost</li><li>ClinVar</li><li>65 188 variants</li></ul>
-      <span class="go">github.com/mahebegnis/variants-genetiques-ml</span>
-    </a>
-    <a class="c" style="--h:var(--mint)" href="https://github.com/mahebegnis/prisma-digital-twins-smart-buildings">
-      <h3>Revue systématique PRISMA 2020</h3>
-      <p class="pf">704 références, 45 études incluses</p>
-      <p>Jumeaux numériques pour l’optimisation énergétique des bâtiments. Présélection assistée par LLM,
-         validation manuelle. Pipeline Python, article IEEE de 29 pages.</p>
-      <ul class="tg"><li>PRISMA 2020</li><li>Python</li><li>IEEE</li><li>CC BY 4.0</li></ul>
-      <span class="go">github.com/mahebegnis/prisma-digital-twins-smart-buildings</span>
-    </a>
-  </div>
-</div></section>
+<section id="production"><div class="col">
+  <h2>En production chez des clients</h2>
+  <p class="intro">Chaque projet a été mené du cadrage technique à la recette, en interlocuteur direct du client. Les clients sont désignés par leur secteur.</p>
 
-<section id="production"><div class="w">
-  <p class="k"><b>03</b> / chez des clients</p>
-  <h2>Solutions en production</h2>
-  <ul class="rw">
-    <li><b>Agent IA de service après-vente</b><span>Base documentaire RAG et API ERP temps réel interrogées en parallèle. Réponses sourcées.<em>industrie de la menuiserie</em></span></li>
-    <li><b>Serveur MCP de pilotage</b><span>64 outils métier exposés à un modèle de langage, dont 14 générateurs de documents réglementaires.<em>outil interne</em></span></li>
-    <li><b>Service d’auto-diagnostic IA</b><span>De la conception au déploiement. 28 contrôles automatiques dont 17 bloquants avant envoi.<em>produit interne</em></span></li>
-    <li><b>Classification documentaire</b><span>43 classes sur 108 documents réels, F1 0,957. BigQuery en région UE, données sensibles.<em>organisme de formation</em></span></li>
-    <li><b>Automatisation documentaire</b><span>Génération des contrats pédagogiques, application web de validation, intégration SharePoint.<em>formation professionnelle</em></span></li>
+  <article class="dossier">
+    <div class="g">
+      <h3>Prévision de la demande par machine learning</h3>
+      <p class="ctx">Distribution spécialisée, 40 magasins. Recalibrer le réapprovisionnement à partir de l’historique des ventes.</p>
+      <dl class="met">
+        <div><dt class="chiffre">0,201</dt><dd><small>WAPE du modèle par famille sur 17 semaines de test</small></dd></div>
+        <div><dt class="chiffre">0,621</dt><dd><small>WAPE des commandes passées par les magasins, soit 3 fois moins précis</small></dd></div>
+        <div><dt class="chiffre">7,17 M</dt><dd><small>lignes de ventes, 149 semaines, 3 413 produits, 19 familles</small></dd></div>
+        <div><dt class="chiffre">40 / 40</dt><dd><small>magasins et 19 familles sur 19 où le gain est vérifié</small></dd></div>
+      </dl>
+    </div>
+    <div>
+      <ul class="faits-l">
+        <li><b>Chaîne complète menée seul.</b> Acquisition, nettoyage, analyse exploratoire, ingénierie de variables, entraînement, évaluation, industrialisation.</li>
+        <li><b>Modèle par famille.</b> LightGBM, perte MAE, 43 variables (retards, moyennes glissantes, stock, flux entre séries, calendrier, promotions), 760 séries. MAE 25,5, biais -1,4 %, MASE 0,951.</li>
+        <li><b>Modèle par produit à deux étages.</b> Classifieur d’occurrence puis régresseur conditionnel, sur un panel à 76,8 % de zéros et 63 202 séries. Couverture des ventes portée de 11,7 % à 95,7 %.</li>
+        <li><b>Étude comparative documentée</b> de CatBoost, LightGBM et XGBoost. Découpage temporel strict, jeu de test jamais vu avant l’évaluation finale.</li>
+        <li><b>Décision de modélisation défendue auprès du client.</b> Prédire la demande latente et non les ventes observées, après mise en évidence d’une boucle de rétroaction induite par le stock.</li>
+      </ul>
+      <p class="pile"><b>Outils.</b> Python, pandas, LightGBM, CatBoost, XGBoost, scikit-learn.</p>
+    </div>
+  </article>
+
+  <article class="dossier">
+    <div class="g">
+      <h3>Agent IA de service après-vente</h3>
+      <p class="ctx">Industrie de la menuiserie. Répondre aux demandes clients à partir de la documentation technique et des données de commande.</p>
+      <dl class="met">
+        <div><dt class="chiffre">111</dt><dd><small>notices techniques PDF indexées, avec vidéos transcrites et catalogue</small></dd></div>
+        <div><dt class="chiffre">2</dt><dd><small>sources interrogées en parallèle : base documentaire et API ERP temps réel</small></dd></div>
+      </dl>
+    </div>
+    <div>
+      <ul class="faits-l">
+        <li><b>Orchestration.</b> Base documentaire RAG et API ERP (commandes, devis) interrogées en parallèle, croisement BigQuery entre commande, catalogue et fiche technique.</li>
+        <li><b>Réponse structurée.</b> Synthèse de commande, diagnostic technique, sources PDF citées, liens de suivi. Chaque réponse est sourcée.</li>
+        <li><b>Intégration industrialisée des notices.</b> Validation de schéma Pydantic, journalisation structurée, manifeste d’exécution. Mise en production sans régression.</li>
+        <li><b>Pilotage et transfert.</b> Tableau de bord Looker Studio (satisfaction, typologie des demandes). Formation du développeur interne du client à la maintenance et à l’évolution de la solution.</li>
+      </ul>
+      <p class="pile"><b>Outils.</b> Vertex AI Agent Builder, Gemini 2.5 Flash, Cloud Run, BigQuery, Cloud Storage, Python.</p>
+    </div>
+  </article>
+
+  <article class="dossier">
+    <div class="g">
+      <h3>Serveur MCP de pilotage d’activité</h3>
+      <p class="ctx">Outil interne, en production. Le système d’information d’un organisme de formation certifié, piloté en langage naturel.</p>
+      <dl class="met">
+        <div><dt class="chiffre">64</dt><dd><small>outils métier exposés au modèle de langage via le protocole MCP</small></dd></div>
+        <div><dt class="chiffre">14</dt><dd><small>générateurs de documents réglementaires au format Word</small></dd></div>
+        <div><dt class="chiffre">11</dt><dd><small>tables PostgreSQL, logique métier séparée du routage</small></dd></div>
+        <div><dt class="chiffre">OAuth 2.0</dt><dd><small>Resource Server (RFC 9728) adossé à Keycloak</small></dd></div>
+      </dl>
+    </div>
+    <div>
+      <ul class="faits-l">
+        <li><b>Périmètre.</b> Clients, sessions, inscriptions, boîte mail, indicateurs de conformité Qualiopi, en remplacement d’une gestion manuelle.</li>
+        <li><b>Documents.</b> Contrats, convocations, attestations, feuilles de présence et certificats de réalisation produits directement au format Word.</li>
+        <li><b>Architecture.</b> Couches séparant le routage de la logique métier. Migration du transport STDIO vers HTTP Streamable sans modifier la logique.</li>
+        <li><b>Sécurité.</b> Jeton à comparaison en temps constant, puis Resource Server OAuth 2.0 adossé à Keycloak.</li>
+        <li><b>Production.</b> Kubernetes, image Docker multi-étages non privilégiée, base PostgreSQL managée, TLS automatisé, audit d’image sans secret embarqué.</li>
+      </ul>
+      <p class="pile"><b>Outils.</b> TypeScript, Node.js, PostgreSQL, MCP SDK, Docker, Kubernetes, OAuth 2.0, Keycloak.</p>
+    </div>
+  </article>
+
+  <article class="dossier">
+    <div class="g">
+      <h3>Structuration technique et gouvernance des développements</h3>
+      <p class="ctx">Chantier interne transverse, en cours. Donner au cabinet un socle commun de dépôts, de contrôles et de méthode.</p>
+    </div>
+    <div>
+      <ul class="faits-l">
+        <li><b>Dépôt partagé.</b> Conception, avec le second développeur de l’équipe, du dépôt GitHub de l’entreprise : organisation des dépôts, chaîne de traitement, outillage et contrôles à l’entrée (détection de secrets par gitleaks, analyse de sécurité automatisée).</li>
+        <li><b>Méthode.</b> Instauration d’une revue de sécurité systématique à chaque lot livré, formalisation de la méthodologie data et des critères d’arbitrage des outils et frameworks.</li>
+        <li><b>Infrastructure.</b> Deux applications déployées et maintenues en production sur le cluster Kubernetes OVH, contribution à son évolution : nœud de secours, nœud dédié à la montée en charge.</li>
+      </ul>
+      <p class="pile"><b>Outils.</b> GitHub, gitleaks, Kubernetes, Docker.</p>
+    </div>
+  </article>
+
+  <h3 style="font-size:clamp(1.5rem,2.4vw,1.95rem);margin:clamp(2rem,4vw,3rem) 0 .8rem">Autres réalisations</h3>
+  <ul class="compact">
+    <li><b>Service d’auto-diagnostic IA</b><span>Produit interne, en production. De la conception au déploiement : FastAPI, PostgreSQL, rapport PDF généré et envoyé automatiquement, 28 contrôles automatiques dont 17 bloquants avant envoi, Kubernetes.<em>produit interne</em></span></li>
+    <li><b>Classification et extraction documentaire</b><span>Preuve de concept sous contrainte RGPD : 43 classes, 108 documents réels, précision 0,967, rappel 0,947, F1 0,957. BigQuery en région européenne, données sensibles au sens de l’article 9.<em>organisme de formation</em></span></li>
+    <li><b>Agent juridique</b><span>Corpus de commande publique. Étude comparative de trois architectures RAG sur protocole d’évaluation reproductible.<em>fédération professionnelle</em></span></li>
+    <li><b>Extraction de bons de travaux manuscrits</b><span>Modèle de vision, évaluation contre un jeu de référence annoté à la main, champs peu fiables signalés comme indicatifs.<em>groupe de propreté</em></span></li>
+    <li><b>Automatisation des contrats pédagogiques</b><span>Service Python, application web de validation, intégration SharePoint via Microsoft Graph, RGPD dès la conception.<em>formation professionnelle</em></span></li>
   </ul>
 </div></section>
 
-<section id="parcours"><div class="w">
-  <p class="k"><b>04</b> / parcours</p>
-  <h2>Formation et expérience</h2>
-  <div class="g g2">
-    <ul class="tl">
-      <li><time>2025 à 2027</time><b>Six and See, Développeur IA / Data Scientist</b><span>Alternance. Projets clients en large autonomie, du cadrage à la recette.</span></li>
-      <li><time>2025</time><b>Observatoire de la Cybersécurité de l’Océan Indien</b><span>Stage. Plateforme d’alerting, APIs Shodan et Censys, PostgreSQL.</span></li>
-      <li><time>2023 à 2024</time><b>Groupe Les Flamboyants</b><span>Stage. Déploiement d’une solution EDR en milieu hospitalier.</span></li>
-    </ul>
-    <ul class="tl">
-      <li><time>2025 à 2027</time><b>Master Informatique, parcours Data et IA</b><span>École du Numérique, FGES, Université Catholique de Lille.</span></li>
-      <li><time>2023 à 2025</time><b>Cycle ingénieur informatique, ESIROI</b><span>Réorientation vers une spécialisation Data et IA en alternance.</span></li>
-      <li><time>2024 à 2025</time><b>SecNumEdu (ANSSI), Atelier RGPD (CNIL)</b><span>1re place nationale à la Nuit de l’Informatique, défi Ubisoft.</span></li>
-    </ul>
+<section id="code"><div class="col">
+  <h2>Code ouvert</h2>
+  <p class="intro">Deux travaux de Master 1, publiés en entier sur GitHub : données, code, décisions et résultats.</p>
+
+  <article class="dossier">
+    <div class="g">
+      <h3><a href="https://github.com/mahebegnis/variants-genetiques-ml">Classification de variants génétiques</a></h3>
+      <p class="ctx">Données ClinVar. Deux questions sur un même jeu : ce variant est-il pathogène, et les laboratoires seront-ils d’accord entre eux.</p>
+      <dl class="met">
+        <div><dt class="chiffre">0,9962</dt><dd><small>AUC en pathogénicité, XGBoost, jeu de test isolé de 5 710 variants</small></dd></div>
+        <div><dt class="chiffre">3,9 %</dt><dd><small>de variants pathogènes manqués, 44 sur 1 124</small></dd></div>
+        <div><dt class="chiffre">0,795</dt><dd><small>AUC en conflictualité, un problème au signal 25 fois plus faible</small></dd></div>
+        <div><dt class="chiffre">8</dt><dd><small>modèles comparés, validation croisée stratifiée à 5 plis</small></dd></div>
+      </dl>
+    </div>
+    <div>
+      <ul class="faits-l">
+        <li><b>Données.</b> Deux sources ClinVar croisées : le jeu Kaggle pour les annotations génomiques, le variant_summary du NCBI pour les labels cliniques. 96 % de correspondance. 28 546 variants à label fiable pour la pathogénicité, 65 188 pour la conflictualité.</li>
+        <li><b>Valeurs manquantes non imputées.</b> Mécanisme MNAR identifié : l’absence de score SIFT pour les variants non missense est une information, pas un manque. Les modèles à base d’arbres la traitent nativement.</li>
+        <li><b>Protocole.</b> 8 modèles, de la régression logistique aux gradient boosting, évalués par validation croisée stratifiée. Jeu de test touché une seule fois, à la fin.</li>
+        <li><b>Test de DeLong.</b> Supériorité des gradient boosting sur la régression logistique, p inférieur à 0,0001.</li>
+        <li><b>Variable créée.</b> af_disagreement, écart-type de la fréquence allélique entre trois bases populationnelles. Première variable pour prédire les désaccords entre laboratoires.</li>
+        <li><b>Profil d’erreur choisi.</b> Plus de faux positifs que de faux négatifs : sur-investiguer plutôt que manquer un variant pathogène.</li>
+      </ul>
+      <p class="pile"><b>Outils.</b> Python, XGBoost, LightGBM, CatBoost, scikit-learn.</p>
+    </div>
+  </article>
+
+  <article class="dossier">
+    <div class="g">
+      <h3><a href="https://github.com/mahebegnis/prisma-digital-twins-smart-buildings">Revue systématique PRISMA 2020</a></h3>
+      <p class="ctx">Jumeaux numériques pour l’optimisation énergétique des bâtiments intelligents, 2015 à 2025. Travail à cinq auteurs.</p>
+      <dl class="met">
+        <div><dt class="chiffre">29</dt><dd><small>pages au format IEEE, 52 références</small></dd></div>
+        <div><dt class="chiffre">7</dt><dd><small>scripts Python, une décision tracée en CSV à chaque étape</small></dd></div>
+      </dl>
+    </div>
+    <div>
+      <ul class="ent">
+        <li><span class="chiffre">704</span><div><i style="--w:100%"></i><small>références brutes : Scopus 343, Web of Science 150, Springer 144, IEEE 67</small></div></li>
+        <li><span class="chiffre">548</span><div><i style="--w:78%"></i><small>après déduplication sur DOI puis titre et année</small></div></li>
+        <li><span class="chiffre">167</span><div><i style="--w:24%"></i><small>après présélection sur titre et résumé assistée par LLM, validée par les cinq auteurs</small></div></li>
+        <li><span class="chiffre">130</span><div><i style="--w:18%"></i><small>après application de quatre critères cumulatifs</small></div></li>
+        <li><span class="chiffre">51</span><div><i style="--w:7%"></i><small>textes intégraux lus, le reste étant inaccessible</small></div></li>
+        <li><span class="chiffre">45</span><div><i style="--w:6.4%"></i><small>études incluses dans la synthèse, cartographiées sur 80 motifs techniques</small></div></li>
+      </ul>
+      <p class="pile"><b>Publication.</b> Licence CC BY 4.0, fichier de citation, article et pipeline dans le dépôt.</p>
+    </div>
+  </article>
+</div></section>
+
+<section id="parcours"><div class="col">
+  <h2>Parcours</h2>
+  <div class="par">
+    <div><h3>Expérience</h3><ul>
+      <li><time>2025 à 2027</time><div><b>Six and See, Lille</b><span>Développeur IA et data scientist en alternance. Cabinet de conseil en IA et data. Projets clients menés en large autonomie, du cadrage technique à la recette, en interlocuteur direct du client.</span></div></li>
+      <li><time>2025</time><div><b>Observatoire de la Cybersécurité de l’Océan Indien</b><span>Stage, mai à juillet. Contribution à une plateforme d’alerting : API Shodan et Censys, PostgreSQL, visualisation temps réel, capteurs IoT. Intervenant à une conférence sur la sécurité et l’éthique de l’IA devant des DPO et RSSI.</span></div></li>
+      <li><time>2023 à 2024</time><div><b>Groupe Les Flamboyants</b><span>Stage, décembre à janvier. Déploiement d’une solution de détection et réponse sur postes en milieu hospitalier.</span></div></li>
+    </ul></div>
+    <div><h3>Formation</h3><ul>
+      <li><time>2025 à 2027</time><div><b>Master Informatique, parcours Data et Intelligence Artificielle</b><span>École du Numérique, FGES, Université Catholique de Lille. Modélisation statistique, machine learning, deep learning, NLP, acquisition et nettoyage des données, analyse prédictive.</span></div></li>
+      <li><time>2023 à 2025</time><div><b>Cycle ingénieur informatique, ESIROI</b><span>La Réunion. Deuxième année de cycle préparatoire intégré puis première année du cycle ingénieur. Réorientation vers une spécialisation Data et IA en alternance.</span></div></li>
+      <li><time>2022 à 2023</time><div><b>Prépa des INP</b><span>Première année de cycle préparatoire.</span></div></li>
+      <li><time>2024 à 2025</time><div><b>Certifications et distinctions</b><span>SecNumEdu (ANSSI), atelier RGPD (CNIL). Première place nationale à la Nuit de l’Informatique, défi Ubisoft. Anglais courant, certification CLES B2.</span></div></li>
+    </ul></div>
   </div>
 </div></section>
 
-<section id="contact"><div class="w">
-  <p class="k"><b>05</b> / contact</p>
-  <h2>Écrivez-moi</h2>
-  <div class="ct">
-    <a href="mailto:mahebegnis9@gmail.com"><em>EMAIL</em><b>mahebegnis9@gmail.com</b></a>
-    <a href="https://www.linkedin.com/in/mahebegnis/"><em>LINKEDIN</em><b>/in/mahebegnis</b></a>
-    <a href="https://github.com/mahebegnis"><em>GITHUB</em><b>@mahebegnis</b></a>
-  </div>
-  <footer><span>2026 Mahé Begnis</span><span>Sans cookie, sans script, sans mesure d’audience.</span></footer>
+<section id="contact" class="contact"><div class="col">
+  <h2>Écrivez-moi, <span class="ital">je réponds</span></h2>
+  <ul class="cl">
+    <li><a href="mailto:mahebegnis9@gmail.com"><span>Email</span><span>mahebegnis9@gmail.com</span></a></li>
+    <li><a href="https://www.linkedin.com/in/mahebegnis/"><span>LinkedIn</span><span>linkedin.com/in/mahebegnis</span></a></li>
+    <li><a href="https://github.com/mahebegnis"><span>GitHub</span><span>github.com/mahebegnis</span></a></li>
+    <li><a href="CV_Mahe_Begnis.pdf"><span>CV</span><span>PDF, deux pages</span></a></li>
+  </ul>
+  <footer><span>Mahé Begnis, 2026</span><span>Page sans cookie, sans script et sans mesure d’audience.</span></footer>
 </div></section>
 
 </body>
