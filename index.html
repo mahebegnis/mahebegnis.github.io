@@ -95,6 +95,7 @@ section > .col > h2{font-size:clamp(2.1rem,4.8vw,3.4rem);line-height:1.05;margin
 .reg p{color:var(--attenue);max-width:70ch}
 .reg p b{color:var(--texte);font-weight:500}
 .reg p + p{margin-top:.55rem}
+.reg p.certif b{font-weight:600}
 
 /* dossiers de projets */
 .dossier{display:grid;gap:1.6rem;padding:clamp(2.2rem,4.5vw,3.6rem) 0;border-bottom:1px solid var(--voile)}
@@ -258,23 +259,30 @@ body:has(#rapide:checked) .dossier > .g{position:static}
   <p class="intro">Les outils sont listés parce qu’ils ont servi sur un projet, pas parce qu’ils figurent dans un programme.</p>
   <div class="reg">
     <div><h3>Machine learning</h3>
-      <div><p><b>Apprentissage supervisé.</b> LightGBM, CatBoost, XGBoost, régression linéaire et logistique, SVM à noyau gaussien, k plus proches voisins, scikit-learn.</p>
+      <div><p><b>Apprentissage supervisé.</b> LightGBM, CatBoost, XGBoost, Random Forest, régression linéaire et logistique, SVM à noyau gaussien, k plus proches voisins, scikit-learn.</p>
       <p><b>Apprentissage non supervisé.</b> k-means, DBSCAN, clustering agglomératif, analyse en composantes principales.</p>
       <p><b>Séries temporelles.</b> Prévision de la demande, modèles à deux étages pour données à excès de zéros, validation temporelle stricte, analyse d’importance des variables.</p></div></div>
     <div><h3>Statistiques et préparation des données</h3>
-      <div><p><b>Tests d’hypothèses.</b> Khi-2, test exact de Fisher, ANOVA, tests de normalité.</p>
-      <p><b>Qualité des données.</b> Valeurs manquantes et leurs mécanismes (MCAR, MAR, MNAR), valeurs aberrantes (Isolation Forest, Tukey, DBSCAN), normalisation des variables (standard, min-max, robuste) et des échantillons (Normalizer), encodage, ingénierie de variables.</p>
+      <div><p><b>Analyse univariée et bivariée.</b> Statistiques descriptives, analyse de corrélation, facteur d’inflation de la variance (VIF).</p>
+      <p><b>Tests d’hypothèses.</b> Khi-2, test exact de Fisher, ANOVA, tests de normalité.</p>
+      <p><b>Valeurs manquantes et aberrantes.</b> Mécanismes MCAR, MAR, MNAR. Détection par Isolation Forest, Tukey, DBSCAN.</p>
+      <p><b>Préparation.</b> Normalisation des variables (standard, min-max, robuste) et des échantillons (Normalizer), encodage, ingénierie de variables.</p>
       <p><b>Métriques.</b> WAPE, MAE, MASE, biais de prédiction, précision, rappel, F1, AUC, score de silhouette.</p></div></div>
     <div><h3>IA générative, LLM et NLP</h3>
       <div><p><b>Architectures RAG.</b> Découpage, recherche hybride, citation des sources, cloisonnement des corpus. Vertex AI Search, ChromaDB.</p>
       <p><b>Agents.</b> Agents outillés, serveurs MCP, ingénierie et évaluation de prompts, contrôle des hallucinations. Gemini, Claude, GPT, Mistral.</p>
-      <p><b>Traitement du langage.</b> TF-IDF, sac de mots, Word2Vec (CBOW), Naive Bayes, NER-CRF, similarité cosinus.</p></div></div>
+      <p><b>Traitement du langage.</b> TF-IDF, sac de mots, Word2Vec (CBOW), Naive Bayes, NER-CRF, similarité cosinus.</p>
+      <p><b>Réseaux récurrents.</b> RNN, LSTM.</p></div></div>
     <div><h3>Données et cloud</h3>
       <div><p><b>Langages et bases.</b> Python (pandas, numpy), TypeScript, SQL, PostgreSQL, BigQuery.</p>
-      <p><b>Google Cloud.</b> Vertex AI, Agent Builder, Cloud Run, Cloud Functions, Cloud Storage. Microsoft Graph et SharePoint. Looker Studio, Power BI.</p></div></div>
+      <p><b>Google Cloud.</b> Vertex AI, Agent Builder, Cloud Run, Cloud Functions, Cloud Storage.</p>
+      <p><b>Écosystème Microsoft.</b> Microsoft Graph, SharePoint.</p>
+      <p><b>Restitution.</b> Looker Studio, Power BI.</p></div></div>
     <div><h3>Industrialisation et conformité</h3>
-      <div><p><b>Mise en production.</b> FastAPI, Docker, Kubernetes, GitLab, Playwright. Pipelines reproductibles, journalisation structurée, tests de non-régression, suivi des performances.</p>
-      <p><b>Protection des données.</b> RGPD dès la conception : minimisation, pseudonymisation, purge, journal d’audit, résidence des données en Europe. Certifié SecNumEdu (ANSSI) et atelier RGPD (CNIL).</p></div></div>
+      <div><p><b>Mise en production.</b> FastAPI, Docker, Kubernetes, GitLab, Playwright.</p>
+      <p><b>Fiabilité.</b> Pipelines reproductibles, journalisation structurée, tests de non-régression, suivi des performances.</p>
+      <p><b>Protection des données.</b> RGPD dès la conception : minimisation, pseudonymisation, purge, journal d’audit, résidence des données en Europe.</p>
+      <p class="certif"><b>Certifié SecNumEdu (ANSSI) et atelier RGPD (CNIL).</b></p></div></div>
   </div>
 </div></section>
 
