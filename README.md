@@ -1,6 +1,6 @@
 # mahebegnis.github.io
 
-Page de présentation et CV de Mahé Begnis.
+Page de présentation et CV
 
 - `index.html` : page unique, sans script ni dépendance externe
 - `fonts/` : IBM Plex Sans et Mono, auto-hébergées (SIL OFL 1.1)
