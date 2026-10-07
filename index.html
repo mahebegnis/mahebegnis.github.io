@@ -1,7 +1,8 @@
 <!doctype html>
-<html lang="fr">
+<html lang="fr" class="no-js">
 <head>
 <meta charset="utf-8">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self' 'sha256-IBv4NAomDEPHu/QpIOkwQxUVg8qTLrpZtHY/xVD7gRA='; style-src 'self'; img-src 'self' data:; font-src 'self'; connect-src 'none'; manifest-src 'none'; media-src 'none'; object-src 'none'; frame-src 'none'; worker-src 'none'; base-uri 'none'; form-action 'none'; upgrade-insecure-requests">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Mahé Begnis, data scientist et GenAI engineer</title>
 <meta name="description" content="Data scientist et GenAI engineer à Lille. Machine learning, IA générative et mise en production. CV, projets publics et contact.">
@@ -9,255 +10,257 @@
 <meta property="og:title" content="Mahé Begnis, data scientist et GenAI engineer">
 <meta property="og:description" content="Machine learning, IA générative et mise en production. CV, projets publics et contact.">
 <meta property="og:type" content="profile">
+<script>document.documentElement.className="js"+(matchMedia("(prefers-reduced-motion: reduce)").matches?"":" anim");</script>
 <link rel="preload" href="fonts/InstrumentSerif-normal-400.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="fonts/InstrumentSans-normal-400_700.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='6' fill='%23070A17'/><text x='16' y='23' font-family='Georgia,serif' font-style='italic' font-size='19' fill='%23A38BFF' text-anchor='middle'>M</text></svg>">
-<style>
-@font-face{font-family:'Instrument Serif';font-style:normal;font-weight:400;font-display:swap;src:url('fonts/InstrumentSerif-normal-400.woff2') format('woff2')}
-@font-face{font-family:'Instrument Serif';font-style:italic;font-weight:400;font-display:swap;src:url('fonts/InstrumentSerif-italic-400.woff2') format('woff2')}
-@font-face{font-family:'Instrument Sans';font-style:normal;font-weight:400 700;font-display:swap;src:url('fonts/InstrumentSans-normal-400_700.woff2') format('woff2')}
-
-:root{
-  --nuit:#070A17; --encre:#0E1330; --voile:rgba(150,165,255,.16); --voile-fort:rgba(150,165,255,.32);
-  --texte:#EEF0FA; --attenue:#9AA3C7; --discret:#7B85AE;
-  --bleu:#5D7CFF; --pervenche:#9D7BFF; --mauve:#C79CFF;
-  --degrade:linear-gradient(100deg,var(--bleu) 0%,var(--pervenche) 55%,var(--mauve) 100%);
-  --serif:'Instrument Serif',Georgia,'Times New Roman',serif;
-  --sans:'Instrument Sans',Helvetica,Arial,sans-serif;
-  --col:1180px;
-}
-*{box-sizing:border-box}
-html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
-body{margin:0;background:var(--nuit);color:var(--texte);font:400 1rem/1.6 var(--sans);-webkit-font-smoothing:antialiased}
-@media(min-width:900px){body{font-size:1.0625rem}}
-body::before{content:"";position:fixed;inset:0;z-index:0;pointer-events:none;
-  background:
-    radial-gradient(60% 45% at 8% 0%,rgba(93,124,255,.22),transparent 70%),
-    radial-gradient(45% 40% at 96% 12%,rgba(199,156,255,.16),transparent 70%),
-    radial-gradient(70% 50% at 50% 110%,rgba(157,123,255,.10),transparent 70%)}
-.col{position:relative;z-index:1;max-width:var(--col);margin:0 auto;padding:0 clamp(20px,4vw,48px)}
-a{color:inherit;text-decoration-color:var(--voile-fort);text-underline-offset:.18em}
-a:hover{text-decoration-color:var(--mauve)}
-:focus-visible{outline:2px solid var(--pervenche);outline-offset:4px}
-h1,h2,h3,.chiffre,.ital{font-family:var(--serif);font-weight:400;letter-spacing:-.01em}
-p{margin:0}
-ul{margin:0;padding:0;list-style:none}
-
-/* barre */
-.barre{position:sticky;top:0;z-index:20;background:rgba(7,10,23,.78);backdrop-filter:blur(14px) saturate(140%);border-bottom:1px solid var(--voile)}
-.barre .col{display:flex;align-items:center;gap:1.5rem;height:60px}
-.marque{font-family:var(--serif);font-style:italic;font-size:1.25rem;text-decoration:none}
-.liens{display:none;gap:1.6rem;margin-left:auto;font-size:.93rem;color:var(--attenue)}
-.liens a{text-decoration:none}
-.liens a:hover{color:var(--texte)}
-@media(min-width:900px){.liens{display:flex}}
-.cv-b{margin-left:.15rem;text-decoration:none;font-weight:600;font-size:.9rem;color:var(--nuit);background:var(--texte);padding:.5rem 1.05rem;border-radius:999px;white-space:nowrap}
-@media(min-width:900px){.liens{margin-left:auto}.bascule{margin-left:.4rem}}
-
-/* hero */
-.hero{padding:clamp(3.2rem,9vw,7rem) 0 clamp(2.4rem,5vw,4rem)}
-.hero h1{font-size:clamp(3.4rem,13vw,9.5rem);line-height:.9;margin:0 0 .35em;letter-spacing:-.025em}
-.sous{font-family:var(--serif);font-style:italic;font-size:clamp(1.6rem,4.6vw,3rem);line-height:1.1;margin:0 0 1.6rem;
-      background:var(--degrade);-webkit-background-clip:text;background-clip:text;color:transparent;display:inline-block;padding-right:.15em}
-.deux{display:grid;gap:2rem}
-@media(min-width:900px){.deux{grid-template-columns:7fr 5fr;gap:4rem;align-items:end}}
-.lede{font-size:clamp(1.05rem,1.6vw,1.2rem);line-height:1.55;max-width:62ch;color:var(--texte)}
-.lede + .lede{margin-top:1rem;color:var(--attenue)}
-.actions{display:flex;flex-wrap:wrap;gap:.7rem;margin-top:1.8rem}
-.b{display:inline-flex;align-items:center;gap:.6rem;text-decoration:none;font-weight:600;font-size:.98rem;padding:.85rem 1.35rem;border-radius:999px;border:1px solid transparent}
-.b-1{background:var(--texte);color:var(--nuit)}
-.b-2{border-color:var(--voile-fort);color:var(--texte)}
-.b-1:hover{background:#fff}.b-2:hover{border-color:var(--mauve)}
-.faits{display:grid;grid-template-columns:1fr 1fr;border-top:1px solid var(--voile)}
-.faits div{padding:1.1rem 0 1.1rem;border-bottom:1px solid var(--voile)}
-.faits div:nth-child(odd){padding-right:1.2rem;border-right:1px solid var(--voile)}
-.faits div:nth-child(even){padding-left:1.2rem}
-.chiffre{font-size:clamp(1.9rem,3vw,2.5rem);line-height:1;display:block;margin-bottom:.35rem;font-variant-numeric:tabular-nums}
-.faits small{font-size:.86rem;color:var(--attenue);line-height:1.35;display:block}
-
-/* apparition au chargement, une seule fois */
-.rv{opacity:0;transform:translateY(14px);animation:rv .9s cubic-bezier(.2,.7,.2,1) forwards}
-.rv:nth-child(2){animation-delay:.12s}.rv:nth-child(3){animation-delay:.24s}
-.deux.rv{animation-delay:.36s}
-@keyframes rv{to{opacity:1;transform:none}}
-@media(prefers-reduced-motion:reduce){.rv{animation:none;opacity:1;transform:none}html{scroll-behavior:auto}}
-
-/* sections */
-section{padding:clamp(3.4rem,7vw,6rem) 0 0;border-top:1px solid var(--voile)}
-section > .col > h2{font-size:clamp(2.1rem,4.8vw,3.4rem);line-height:1.05;margin:0 0 .5rem}
-.intro{color:var(--attenue);max-width:62ch;margin:0 0 clamp(2rem,4vw,3rem)}
-
-/* registre des compétences */
-.reg{border-top:1px solid var(--voile)}
-.reg > div{display:grid;gap:.6rem;padding:1.5rem 0;border-bottom:1px solid var(--voile)}
-@media(min-width:900px){.reg > div{grid-template-columns:4fr 8fr;gap:3rem;padding:2rem 0}}
-.reg h3{font-size:clamp(1.5rem,2.4vw,1.95rem);line-height:1.15;margin:0}
-.reg p{color:var(--attenue);max-width:70ch}
-.reg p b{color:var(--texte);font-weight:500}
-.reg p + p{margin-top:.55rem}
-.reg p.certif b{font-weight:600}
-
-/* dossiers de projets */
-.dossier{display:grid;gap:1.6rem;padding:clamp(2.2rem,4.5vw,3.6rem) 0;border-bottom:1px solid var(--voile)}
-.dossier:last-child{border-bottom:0}
-@media(min-width:900px){.dossier{grid-template-columns:5fr 7fr;gap:4rem}.dossier > .g{position:sticky;top:5rem;align-self:start}}
-.dossier h3{font-size:clamp(1.75rem,3vw,2.5rem);line-height:1.08;margin:0 0 .5rem}
-.dossier h3 a{text-decoration:none}
-.dossier h3 a:hover{text-decoration:underline;text-decoration-color:var(--mauve)}
-.ctx{color:var(--attenue);margin:0 0 1.4rem;max-width:44ch}
-.met{display:grid;grid-template-columns:1fr 1fr;gap:0 1.4rem;border-top:1px solid var(--voile);margin:0}
-.met > div{padding:.9rem 0;border-bottom:1px solid var(--voile)}
-.met dd{margin:0}
-.met .chiffre{font-size:clamp(1.7rem,2.4vw,2.2rem);margin-bottom:.25rem}
-.met small{font-size:.84rem;color:var(--attenue);line-height:1.35;display:block}
-.faits-l{border-top:1px solid var(--voile)}
-.faits-l li{padding:.95rem 0;border-bottom:1px solid var(--voile);color:var(--attenue);max-width:70ch}
-.faits-l li b{color:var(--texte);font-weight:500}
-.pile{margin-top:1rem;font-size:.9rem;color:var(--discret)}
-.pile b{font-weight:500;color:var(--attenue)}
-
-/* entonnoir PRISMA */
-.ent{border-top:1px solid var(--voile);margin-top:.4rem}
-.ent li{display:grid;grid-template-columns:4.2rem 1fr;gap:1rem;align-items:center;padding:.7rem 0;border-bottom:1px solid var(--voile)}
-.ent .chiffre{font-size:1.55rem;margin:0}
-.ent i{display:block;height:9px;border-radius:2px;background:var(--degrade);opacity:.85;width:var(--w)}
-.ent small{display:block;color:var(--attenue);font-size:.86rem;margin-top:.35rem;line-height:1.35}
-
-/* liste compacte */
-.compact li{padding:1.1rem 0;border-bottom:1px solid var(--voile);display:grid;gap:.25rem}
-@media(min-width:900px){.compact li{grid-template-columns:5fr 7fr;gap:4rem}}
-.compact b{font-family:var(--serif);font-weight:400;font-size:1.35rem;line-height:1.15}
-.compact span{color:var(--attenue)}
-.compact em{font-style:normal;color:var(--discret);display:block;font-size:.9rem;margin-top:.25rem}
-
-/* parcours */
-.par{display:grid;gap:2.4rem}
-@media(min-width:900px){.par{grid-template-columns:1fr 1fr;gap:4rem}}
-.par h3{font-size:1.6rem;margin:0 0 .6rem}
-.par li{padding:1rem 0;border-top:1px solid var(--voile);display:grid;grid-template-columns:7.2rem 1fr;gap:1rem}
-.par li:last-child{border-bottom:1px solid var(--voile)}
-.par time{color:var(--discret);font-size:.9rem;padding-top:.15rem;font-variant-numeric:tabular-nums}
-.par b{font-weight:600;display:block}
-.par span{color:var(--attenue);display:block}
-
-/* contact */
-.contact h2{font-size:clamp(2.6rem,7vw,5.5rem);line-height:.95;margin:0 0 1.6rem}
-.contact h2 .ital{font-style:italic;background:var(--degrade);-webkit-background-clip:text;background-clip:text;color:transparent}
-.cl li{border-top:1px solid var(--voile)}
-.cl li:last-child{border-bottom:1px solid var(--voile)}
-.cl a{display:grid;grid-template-columns:7.2rem 1fr;gap:1rem;padding:1.05rem 0;text-decoration:none;font-size:1.05rem}
-.cl a span:first-child{color:var(--discret)}
-.cl a:hover span:last-child{text-decoration:underline;text-decoration-color:var(--mauve)}
-footer{padding:2.4rem 0 3rem;color:var(--discret);font-size:.88rem;display:flex;flex-wrap:wrap;gap:.4rem 2rem}
-
-/* aération mobile, sans effet au-dessus de 900 px */
-@media(max-width:899px){
-  body{line-height:1.7}
-  .hero{padding-top:4rem}
-  .sous{margin-bottom:2rem}
-  .deux{gap:2.8rem}
-  .lede + .lede{margin-top:1.3rem}
-  .actions{margin-top:2.2rem}
-  .faits div{padding:1.4rem 0}
-  section{padding-top:5.5rem}
-  section > .col > h2{margin-bottom:.9rem}
-  .intro{margin-bottom:2.8rem}
-  .reg > div{padding:2.2rem 0;gap:1rem}
-  .reg p + p{margin-top:.9rem}
-  .dossier{padding:3.4rem 0;gap:2.4rem}
-  .dossier h3{margin-bottom:.8rem}
-  .ctx{margin-bottom:1.8rem}
-  .met > div{padding:1.15rem 0}
-  .faits-l li{padding:1.25rem 0}
-  .pile{margin-top:1.5rem}
-  .ent li{padding:1rem 0}
-  .compact li{padding:1.5rem 0;gap:.5rem}
-  .par{gap:3.2rem}
-  .par li{padding:1.3rem 0}
-  .cl a{padding:1.3rem 0}
-  footer{padding-top:3rem}
-}
-
-/* interrupteur et bascules (cases a cocher, sans script) */
-.vh{position:absolute;width:1px;height:1px;margin:-1px;padding:0;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap;border:0}
-.bascule{display:inline-flex;align-items:center;gap:.5rem;margin-left:auto;font-size:.86rem;color:var(--attenue);cursor:pointer;
-  user-select:none;border:1px solid var(--voile);border-radius:999px;padding:.4rem .85rem .4rem .6rem;white-space:nowrap}
-.bascule .pt{width:.55rem;height:.55rem;border-radius:50%;background:var(--voile-fort)}
-#rapide:checked + .bascule .pt{background:var(--pervenche);box-shadow:0 0 0 3px rgba(157,123,255,.25)}
-#rapide:checked + .bascule{color:var(--texte);border-color:var(--voile-fort)}
-#rapide:focus-visible + .bascule{outline:2px solid var(--pervenche);outline-offset:3px}
-.bascule .on,#rapide:checked + .bascule .off{display:none}
-#rapide:checked + .bascule .on{display:inline}
-.plus-l{display:none}
-body:has(#rapide:checked) .plus-l{display:inline-flex;align-items:center;margin-top:1.2rem;font-size:.92rem;color:var(--texte);cursor:pointer;
-  border-bottom:1px solid var(--voile-fort);padding-bottom:.1rem}
-body:has(#rapide:checked) .plus-l:hover{border-color:var(--mauve)}
-body:has(#rapide:checked) .dossier > .detail{display:none}
-body:has(#rapide:checked) .dossier:has(.plus:checked) > .detail{display:block}
-body:has(#rapide:checked) .dossier{grid-template-columns:1fr;gap:1.1rem}
-body:has(#rapide:checked) .dossier > .g{position:static}
-.plus:checked ~ .plus-l .off,.plus:not(:checked) ~ .plus-l .on{display:none}
-.plus:focus-visible ~ .plus-l{outline:2px solid var(--pervenche);outline-offset:3px}
-
-/* compteurs et revelations au defilement : uniquement si le navigateur sait faire, jamais en mouvement reduit */
-@property --n{syntax:'<integer>';inherits:false;initial-value:0}
-.chiffre b{font-weight:inherit}
-@supports (animation-timeline: view()){
- @media (prefers-reduced-motion:no-preference){
-  .cpt > b{display:none}
-  .cpt{counter-reset:n var(--n)}
-  .cpt::after{content:attr(data-pre) counter(n) attr(data-suf)}
-  .cpt.z2::after{content:attr(data-pre) counter(n,decimal-leading-zero) attr(data-suf)}
-  .cpt{animation:cpt linear both;animation-timeline:view();animation-range:entry 0px entry 340px}
-  .cpt-h{animation:cpt 1.3s cubic-bezier(.2,.7,.2,1) .5s both;animation-timeline:auto;animation-range:normal}
-  @keyframes cpt{from{--n:0}}
-  .reg > div,.dossier,.compact li,.par li,.cl li{animation:app linear both;animation-timeline:view();animation-range:entry 0px entry 260px}
-  @keyframes app{from{opacity:0;transform:translateY(18px)}}
-  .ent li i{transform-origin:left center;animation:bar linear both;animation-timeline:view();animation-range:entry 0px entry 300px}
-  @keyframes bar{from{transform:scaleX(0)}}
- }
-}
-.lk{display:inline-flex;align-items:center;justify-content:center;width:36px;height:36px;border-radius:50%;
-    border:1px solid var(--voile);color:var(--attenue);text-decoration:none;flex:none}
-.lk:hover{color:var(--texte);border-color:var(--mauve)}
-@media(max-width:480px){.marque{display:none}.barre .col{gap:.6rem}.bascule{padding:.38rem .7rem .38rem .55rem}}
-</style>
+<link rel="stylesheet" href="assets/css/site.css">
+<script src="assets/vendor/gsap.min.js" integrity="sha384-XmJ9SoHtVOHoQUcKvFAzVXwdkKo1Ie3bhmSoIAkcdsHGaIrVJIkmozyq0FJeb/Ly" defer></script>
+<script src="assets/vendor/ScrollTrigger.min.js" integrity="sha384-wl5TeDVvOWt30Pbf8aSo2ZrzsOjddu3avOBvHe+p+OhJt9gP6w9YXmDkN5DK2/dF" defer></script>
+<script src="assets/vendor/lenis.min.js" integrity="sha384-jqpi9VmOdhyLoLURgjCn7EpnG9BbnHW57ibIZoeaIU+erWDH3k8fQQg0xH2ySjnw" defer></script>
+<script src="assets/js/site.js" integrity="sha384-u2odOf9MuMhAMDGh1JPIBtzZhQZij5IviRI+wjtVDUjLaV1nDr5S19OrJuMvBebZ" defer></script>
 </head>
 <body>
+<a class="evite" href="#contenu">Aller au contenu</a>
 
-<div class="barre"><div class="col">
+<svg class="defs" aria-hidden="true" focusable="false"><defs>
+  <linearGradient id="dg" x1="0" y1="0" x2="480" y2="0" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#5D7CFF"/><stop offset=".55" stop-color="#9D7BFF"/><stop offset="1" stop-color="#C79CFF"/></linearGradient>
+  <linearGradient id="dgp" x1="0" y1="0" x2="240" y2="0" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#5D7CFF"/><stop offset=".55" stop-color="#9D7BFF"/><stop offset="1" stop-color="#C79CFF"/></linearGradient>
+</defs></svg>
+
+<div class="ambiance" aria-hidden="true">
+  <div class="amb-base"></div>
+  <div class="amb-projets"><div class="amb" data-projet="prevision"></div><div class="amb" data-projet="sav"></div><div class="amb" data-projet="mcp"></div><div class="amb" data-projet="gouvernance"></div><div class="amb" data-projet="variants"></div><div class="amb" data-projet="prisma"></div></div>
+</div>
+
+<div class="decor" aria-hidden="true">
+  <div class="decor-el d1" data-projet="prevision" data-prof=".5" data-rot="-5"><div class="decor-in"><svg class="forme" viewBox="0 0 380 200" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M10 150h40v-30h40v-55h40v35h40v-70h40v40h40v-20h40v50h40" /><path d="M10 150H380" stroke-dasharray="3 7"/></svg></div></div>
+  <div class="decor-el d2" data-projet="sav" data-prof=".3" data-rot="8"><div class="decor-in"><svg class="forme" viewBox="0 0 380 200" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="40" cy="100" r="16"/><circle cx="190" cy="40" r="16"/><circle cx="190" cy="160" r="16"/><circle cx="340" cy="100" r="22"/><path d="M56 100C120 100 120 40 174 40M56 100C120 100 120 160 174 160M206 40C270 40 270 100 318 100M206 160C270 160 270 100 318 100"/></svg></div></div>
+  <div class="decor-el d3" data-projet="mcp" data-prof=".8" data-rot="-12"><div class="decor-in"><svg class="forme" viewBox="0 0 380 200" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="190" cy="100" r="88" stroke-dasharray="2 9"/><circle cx="190" cy="100" r="26"/><path d="M190 74V12M216 100h62M190 126v62M164 100h-62"/></svg></div></div>
+  <div class="decor-el d4" data-projet="gouvernance" data-prof=".25" data-rot="4"><div class="decor-in"><svg class="forme" viewBox="0 0 380 200" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M20 150H360"/><path d="M110 150C140 150 140 60 180 60H300C330 60 330 150 360 150"/><circle cx="20" cy="150" r="8"/><circle cx="110" cy="150" r="8"/><circle cx="220" cy="60" r="8"/><circle cx="270" cy="60" r="8"/><circle cx="360" cy="150" r="8"/></svg></div></div>
+  <div class="decor-el d5" data-projet="variants" data-prof="1" data-rot="-3"><div class="decor-in"><svg class="forme" viewBox="0 0 380 200" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M20 190V10M20 190H380"/><path d="M20 190L380 10" stroke-dasharray="3 7"/><path d="M20 190C24 40 60 16 380 10"/><path d="M20 190C70 110 160 50 380 10"/></svg></div></div>
+  <div class="decor-el d6" data-projet="prisma" data-prof=".6" data-rot="10"><div class="decor-in"><svg class="forme" viewBox="0 0 380 200" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M20 20H360L280 80H100Z"/><path d="M100 80H280L230 140H150Z"/><path d="M150 140H230L210 190H170Z"/></svg></div></div>
+</div>
+
+<header class="barre"><div class="col">
   <a class="marque" href="#haut">Mahé Begnis</a>
-  <nav class="liens"><a href="#competences">Compétences</a><a href="#production">Production</a><a href="#recherche">Projets de recherche</a><a href="#parcours">Parcours</a><a href="#contact">Contact</a></nav>
-  <input type="checkbox" id="rapide" class="vh"><label for="rapide" class="bascule"><span class="pt"></span><span class="off">Lecture rapide</span><span class="on">Lecture complète</span></label>
+  <nav class="liens" aria-label="Navigation principale"><a href="#projets">Projets</a><a href="#realisations">Réalisations</a><a href="#competences">Compétences</a><a href="#parcours">Parcours</a><a href="#contact">Contact</a></nav>
   <a class="lk" href="https://www.linkedin.com/in/mahebegnis/" aria-label="Profil LinkedIn de Mahé Begnis" title="LinkedIn"><svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true" focusable="false"><path fill="currentColor" d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg></a>
   <a class="cv-b" href="CV_Mahe_Begnis.pdf">Le CV</a>
-</div></div>
-
-<header class="hero" id="haut"><div class="col">
-  <h1 class="rv">Mahé Begnis</h1>
-  <p class="sous rv">Data scientist <span style="font-style:normal">&amp;</span> GenAI engineer</p>
-  <div class="deux rv">
-    <div>
-      <p class="lede">Deux ans d’alternance en cabinet de conseil en intelligence artificielle, en fin de Master Data et IA. Je conçois, développe et mets en production des solutions de machine learning et d’IA générative utilisées au quotidien chez des clients industriels, du retail et de la formation.</p>
-      <p class="lede">Une même exigence partout : une référence de comparaison, une métrique, un jeu de test. Basé à Lille, mobile sur Lille et Paris.</p>
-      <div class="actions">
-        <a class="b b-1" href="CV_Mahe_Begnis.pdf">Consulter le CV</a>
-        <a class="b b-2" href="https://github.com/mahebegnis">Voir le code sur GitHub</a>
-      </div>
-    </div>
-    <div class="faits">
-      <div><span class="chiffre cpt cpt-h" style="--n:2" data-pre="" data-suf=" ans"><b>2 ans</b></span><small>d’alternance en conseil IA, projets menés en large autonomie</small></div>
-      <div><span class="chiffre cpt z2 cpt-h" style="--n:17" data-pre="7," data-suf=" M"><b>7,17 M</b></span><small>lignes de ventes modélisées pour la prévision de la demande</small></div>
-      <div><span class="chiffre cpt cpt-h" style="--n:64" data-pre="" data-suf=""><b>64</b></span><small>outils métier exposés à un modèle de langage via MCP</small></div>
-      <div><span class="chiffre cpt z2 cpt-h" style="--n:996" data-pre="0," data-suf=""><b>0,996</b></span><small>AUC sur jeu de test isolé, classification de variants</small></div>
-    </div>
-  </div>
 </div></header>
 
-<section id="competences"><div class="col">
-  <h2>Ce que je sais faire</h2>
-  <p class="intro">Les outils sont listés parce qu’ils ont servi sur un projet, pas parce qu’ils figurent dans un programme.</p>
-  <div class="reg">
+<main id="contenu" tabindex="-1">
+
+<section class="hero" id="haut" aria-labelledby="nom">
+  <p class="lieu" data-fondu><span class="pt" aria-hidden="true"></span>Basé à Lille, mobile sur Lille et Paris.</p>
+  <div class="scene">
+    <h1 class="nom" id="nom"><span class="ligne"><span class="ligne-in">Mahé Begnis</span></span></h1>
+    <p class="sous"><span class="ligne"><span class="ligne-in">Data scientist <span class="et">&amp;</span> GenAI engineer</span></span></p>
+    <ul class="cartes" aria-label="Chiffres clés">
+      <li class="carte c1" data-prof="1.1" data-dir="-1"><a class="carte-in" href="#parcours" data-pastille="Voir le parcours"><span class="carte-vis"><svg class="vis vis-carte" viewBox="0 0 240 110" aria-hidden="true" focusable="false" preserveAspectRatio="xMidYMid meet"><path class="v-grad" d="M18.0 46h5.4v26h-5.4zM26.6 46h5.4v26h-5.4zM35.2 46h5.4v26h-5.4zM43.8 46h5.4v26h-5.4zM52.4 46h5.4v26h-5.4zM61.0 46h5.4v26h-5.4zM69.6 46h5.4v26h-5.4zM78.2 46h5.4v26h-5.4zM86.8 46h5.4v26h-5.4zM95.4 46h5.4v26h-5.4zM104.0 46h5.4v26h-5.4zM112.6 46h5.4v26h-5.4zM121.2 46h5.4v26h-5.4zM129.8 46h5.4v26h-5.4zM138.4 46h5.4v26h-5.4zM147.0 46h5.4v26h-5.4zM155.6 46h5.4v26h-5.4zM164.2 46h5.4v26h-5.4zM172.8 46h5.4v26h-5.4zM181.4 46h5.4v26h-5.4zM190.0 46h5.4v26h-5.4zM198.6 46h5.4v26h-5.4zM207.2 46h5.4v26h-5.4zM215.8 46h5.4v26h-5.4z"/><text x="18" y="96" class="v-lab v-fin" text-anchor="start">2025</text><text x="222" y="96" class="v-lab v-fin" text-anchor="end">2027</text><text x="18" y="30" class="v-lab v-fin" text-anchor="start">24 mois</text></svg></span><span class="chiffre">2 ans</span><small>d’alternance en conseil IA, projets menés en large autonomie</small></a></li>
+      <li class="carte c2" data-prof=".8" data-dir="1"><a class="carte-in" href="#prevision" data-aller="0" data-pastille="Voir le projet"><span class="carte-vis"><svg class="vis vis-carte" viewBox="0 0 240 110" aria-hidden="true" focusable="false" preserveAspectRatio="xMidYMid meet"><text x="20" y="14" class="v-lab v-fin" text-anchor="start">760 séries</text><defs><pattern id="g-ser" x="20" y="24" width="5" height="4.3" patternUnits="userSpaceOnUse"><rect class="v-pt v-fort" width="3.2" height="3.2"/></pattern></defs><rect x="20" y="24" width="200.0" height="81.7" fill="url(#g-ser)"/></svg></span><span class="chiffre">7,17 M</span><small>lignes de ventes modélisées pour la prévision de la demande</small></a></li>
+      <li class="carte c3" data-prof="1.4" data-dir="-1"><a class="carte-in" href="#mcp" data-aller="2" data-pastille="Voir le projet"><span class="carte-vis"><svg class="vis vis-carte" viewBox="0 0 240 110" aria-hidden="true" focusable="false" preserveAspectRatio="xMidYMid meet"><path class="v-pt v-fort" d="M160.7 44.9h5v5h-5zM161.3 49.2h5v5h-5zM161.5 53.5h5v5h-5zM161.3 57.8h5v5h-5zM160.7 62.1h5v5h-5zM159.6 66.3h5v5h-5zM158.2 70.3h5v5h-5zM156.3 74.2h5v5h-5zM154.1 77.9h5v5h-5zM151.5 81.4h5v5h-5zM148.6 84.6h5v5h-5zM145.4 87.5h5v5h-5zM141.9 90.1h5v5h-5zM138.2 92.3h5v5h-5zM134.3 94.2h5v5h-5zM130.3 95.6h5v5h-5zM126.1 96.7h5v5h-5zM121.8 97.3h5v5h-5zM117.5 97.5h5v5h-5zM113.2 97.3h5v5h-5zM108.9 96.7h5v5h-5zM104.7 95.6h5v5h-5zM100.7 94.2h5v5h-5zM96.8 92.3h5v5h-5zM93.1 90.1h5v5h-5zM89.6 87.5h5v5h-5zM86.4 84.6h5v5h-5zM83.5 81.4h5v5h-5zM80.9 77.9h5v5h-5zM78.7 74.2h5v5h-5zM76.8 70.3h5v5h-5zM75.4 66.3h5v5h-5zM74.3 62.1h5v5h-5zM73.7 57.8h5v5h-5zM73.5 53.5h5v5h-5zM73.7 49.2h5v5h-5zM74.3 44.9h5v5h-5zM75.4 40.7h5v5h-5zM76.8 36.7h5v5h-5zM78.7 32.8h5v5h-5zM80.9 29.1h5v5h-5zM83.5 25.6h5v5h-5zM86.4 22.4h5v5h-5zM89.6 19.5h5v5h-5zM93.1 16.9h5v5h-5zM96.8 14.7h5v5h-5zM100.7 12.8h5v5h-5zM104.7 11.4h5v5h-5zM108.9 10.3h5v5h-5zM113.2 9.7h5v5h-5z"/><path class="v-grad" d="M117.5 9.5h5v5h-5zM121.8 9.7h5v5h-5zM126.1 10.3h5v5h-5zM130.3 11.4h5v5h-5zM134.3 12.8h5v5h-5zM138.2 14.7h5v5h-5zM141.9 16.9h5v5h-5zM145.4 19.5h5v5h-5zM148.6 22.4h5v5h-5zM151.5 25.6h5v5h-5zM154.1 29.1h5v5h-5zM156.3 32.8h5v5h-5zM158.2 36.7h5v5h-5zM159.6 40.7h5v5h-5z"/><text x="120" y="61" class="v-num v-petit" text-anchor="middle">64</text></svg></span><span class="chiffre">64</span><small>outils métier exposés à un modèle de langage via MCP</small></a></li>
+      <li class="carte c4" data-prof="1.2" data-dir="1"><a class="carte-in" href="#variants" data-aller="4" data-pastille="Voir le projet"><span class="carte-vis"><svg class="vis vis-carte" viewBox="0 0 240 110" aria-hidden="true" focusable="false" preserveAspectRatio="xMidYMid meet"><path class="v-trait v-epais" d="M80 70A40 40 0 0 1 160 70"/><path class="v-grad-trait v-epais" d="M80 70A40 40 0 0 1 160.00 69.50"/><text x="120" y="92" class="v-lab v-fin" text-anchor="middle">AUC</text></svg></span><span class="chiffre">0,996</span><small>AUC sur jeu de test isolé, classification de variants</small></a></li>
+    </ul>
+  </div>
+  <div class="hero-pied">
+    <p class="lede" data-fondu>Deux ans d’alternance en cabinet de conseil en intelligence artificielle, en fin de Master Data et IA. Je conçois, développe et mets en production des solutions de machine learning et d’IA générative utilisées au quotidien chez des clients industriels, du retail et de la formation.</p>
+    <div class="actions" data-fondu>
+      <a class="b b-1" href="CV_Mahe_Begnis.pdf" data-aimant=".3"><span data-aimant-in>Consulter le CV</span></a>
+      <a class="b b-2" href="https://github.com/mahebegnis">Voir le code sur GitHub</a>
+    </div>
+  </div>
+</section>
+
+<section class="bandeau" aria-label="Outils utilisés en projet">
+  <div class="defile"><div class="piste">
+    <ul class="groupe"><li>Python</li><li>LightGBM</li><li>XGBoost</li><li>Vertex AI</li><li>Gemini</li><li>Claude</li><li>MCP</li><li>PostgreSQL</li><li>BigQuery</li><li>FastAPI</li><li>Docker</li><li>Kubernetes</li><li>Azure</li><li>TypeScript</li></ul>
+    <ul class="groupe" aria-hidden="true"><li>Python</li><li>LightGBM</li><li>XGBoost</li><li>Vertex AI</li><li>Gemini</li><li>Claude</li><li>MCP</li><li>PostgreSQL</li><li>BigQuery</li><li>FastAPI</li><li>Docker</li><li>Kubernetes</li><li>Azure</li><li>TypeScript</li></ul>
+  </div></div>
+</section>
+
+<section class="projets" id="projets" aria-labelledby="t-projets">
+  <div class="col projets-tete">
+    <h2 id="t-projets">Projets</h2>
+    <div class="projets-intro">
+      <p><b>En production.</b> Chaque projet a été mené du cadrage technique à la recette, en interlocuteur direct du client. Les clients sont désignés par leur secteur.</p>
+      <p><b>Recherche.</b> Deux travaux de Master 1, publiés en entier sur GitHub : données, code, décisions et résultats.</p>
+    </div>
+  </div>
+  <span class="ancre" id="production"></span>
+  <div class="vitrine">
+    <div class="col vitrine-scene">
+      <nav class="vitrine-nav" aria-label="Aller à un projet">
+        <a href="#prevision" data-aller="0" aria-current="true">Prévision</a><a href="#sav" data-aller="1">Agent SAV</a><a href="#mcp" data-aller="2">Serveur MCP</a><a href="#gouvernance" data-aller="3">Gouvernance</a><a href="#variants" data-aller="4">Variants</a><a href="#prisma" data-aller="5">PRISMA</a>
+      </nav>
+      <div class="diapos">
+        <article class="diapo" id="prevision" data-projet="prevision" aria-labelledby="t-prevision">
+          <div class="diapo-texte">
+            <p class="diapo-cat" data-diapo>En production</p>
+            <h3 id="t-prevision"><span class="masque"><span class="masque-in">Prévision de la demande par machine learning</span></span></h3>
+            <p class="ctx" data-diapo>Distribution spécialisée, 40 magasins. Recalibrer le réapprovisionnement à partir de l’historique des ventes.</p>
+            <dl class="met" data-diapo>
+        <div><dt class="chiffre">0,201</dt><dd><small>WAPE du modèle par famille sur 17 semaines de test</small></dd></div>
+        <div><dt class="chiffre">0,621</dt><dd><small>WAPE des commandes passées par les magasins, soit 3 fois moins précis</small></dd></div>
+        <div><dt class="chiffre">7,17 M</dt><dd><small>lignes de ventes, 149 semaines, 3 413 produits, 19 familles</small></dd></div>
+        <div><dt class="chiffre">40 / 40</dt><dd><small>magasins et 19 familles sur 19 où le gain est vérifié</small></dd></div>
+      </dl>
+            <details class="detail" data-diapo><summary><span class="off">Voir le détail</span><span class="on">Replier</span></summary><div class="detail-corps"><ul class="faits-l">
+        <li><b>Chaîne complète menée seul.</b> Acquisition, nettoyage, analyse exploratoire, ingénierie de variables, entraînement, évaluation, industrialisation.</li>
+        <li><b>Modèle par famille.</b> LightGBM, perte MAE, 43 variables (retards, moyennes glissantes, stock, flux entre séries, calendrier, promotions), 760 séries. MAE 25,5, biais -1,4 %, MASE 0,951.</li>
+        <li><b>Modèle par produit à deux étages.</b> Classifieur d’occurrence puis régresseur conditionnel, sur un panel à 76,8 % de zéros et 63 202 séries. Couverture des ventes portée de 11,7 % à 95,7 %.</li>
+        <li><b>Étude comparative documentée</b> de CatBoost, LightGBM et XGBoost. Découpage temporel strict, jeu de test jamais vu avant l’évaluation finale.</li>
+        <li><b>Décision de modélisation défendue auprès du client.</b> Prédire la demande latente et non les ventes observées, après mise en évidence d’une boucle de rétroaction induite par le stock.</li>
+      </ul>
+      <p class="pile"><b>Outils.</b> Python, pandas, LightGBM, CatBoost, XGBoost, scikit-learn.</p></div></details>
+          </div>
+          <div class="diapo-visuel">
+            <div class="cadre-vis"><div class="masque-vis"><div class="visuel" data-pastille="Voir le détail"><svg class="vis" viewBox="0 0 480 300" aria-hidden="true" focusable="false" preserveAspectRatio="xMidYMid meet"><text x="24" y="28" class="v-lab" text-anchor="start">760 séries : 40 magasins, 19 familles</text><defs><pattern id="g-prev" x="64" y="58" width="8" height="8" patternUnits="userSpaceOnUse"><rect class="v-pt" width="4.6" height="4.6"/></pattern></defs><rect x="64" y="58" width="320.0" height="152.0" fill="url(#g-prev)"/><path class="v-grad" d="M64.0 44.0h4.6v4.6h-4.6zM72.0 44.0h4.6v4.6h-4.6zM80.0 44.0h4.6v4.6h-4.6zM88.0 44.0h4.6v4.6h-4.6zM96.0 44.0h4.6v4.6h-4.6zM104.0 44.0h4.6v4.6h-4.6zM112.0 44.0h4.6v4.6h-4.6zM120.0 44.0h4.6v4.6h-4.6zM128.0 44.0h4.6v4.6h-4.6zM136.0 44.0h4.6v4.6h-4.6zM144.0 44.0h4.6v4.6h-4.6zM152.0 44.0h4.6v4.6h-4.6zM160.0 44.0h4.6v4.6h-4.6zM168.0 44.0h4.6v4.6h-4.6zM176.0 44.0h4.6v4.6h-4.6zM184.0 44.0h4.6v4.6h-4.6zM192.0 44.0h4.6v4.6h-4.6zM200.0 44.0h4.6v4.6h-4.6zM208.0 44.0h4.6v4.6h-4.6zM216.0 44.0h4.6v4.6h-4.6zM224.0 44.0h4.6v4.6h-4.6zM232.0 44.0h4.6v4.6h-4.6zM240.0 44.0h4.6v4.6h-4.6zM248.0 44.0h4.6v4.6h-4.6zM256.0 44.0h4.6v4.6h-4.6zM264.0 44.0h4.6v4.6h-4.6zM272.0 44.0h4.6v4.6h-4.6zM280.0 44.0h4.6v4.6h-4.6zM288.0 44.0h4.6v4.6h-4.6zM296.0 44.0h4.6v4.6h-4.6zM304.0 44.0h4.6v4.6h-4.6zM312.0 44.0h4.6v4.6h-4.6zM320.0 44.0h4.6v4.6h-4.6zM328.0 44.0h4.6v4.6h-4.6zM336.0 44.0h4.6v4.6h-4.6zM344.0 44.0h4.6v4.6h-4.6zM352.0 44.0h4.6v4.6h-4.6zM360.0 44.0h4.6v4.6h-4.6zM368.0 44.0h4.6v4.6h-4.6zM376.0 44.0h4.6v4.6h-4.6z"/><path class="v-grad" d="M48.0 58.0h4.6v4.6h-4.6zM48.0 66.0h4.6v4.6h-4.6zM48.0 74.0h4.6v4.6h-4.6zM48.0 82.0h4.6v4.6h-4.6zM48.0 90.0h4.6v4.6h-4.6zM48.0 98.0h4.6v4.6h-4.6zM48.0 106.0h4.6v4.6h-4.6zM48.0 114.0h4.6v4.6h-4.6zM48.0 122.0h4.6v4.6h-4.6zM48.0 130.0h4.6v4.6h-4.6zM48.0 138.0h4.6v4.6h-4.6zM48.0 146.0h4.6v4.6h-4.6zM48.0 154.0h4.6v4.6h-4.6zM48.0 162.0h4.6v4.6h-4.6zM48.0 170.0h4.6v4.6h-4.6zM48.0 178.0h4.6v4.6h-4.6zM48.0 186.0h4.6v4.6h-4.6zM48.0 194.0h4.6v4.6h-4.6zM48.0 202.0h4.6v4.6h-4.6z"/><text x="392" y="54" class="v-lab v-fin" text-anchor="start">gain vérifié</text><text x="392" y="76" class="v-lab v-fin" text-anchor="start">40 sur 40</text><text x="392" y="98" class="v-lab v-fin" text-anchor="start">19 sur 19</text><text x="24" y="236" class="v-lab" text-anchor="start">WAPE modèle</text><rect class="v-grad" x="150" y="226" width="77.7" height="12" rx="3"/><text x="237.68115942028987" y="237" class="v-num" text-anchor="start">0,201</text><text x="24" y="270" class="v-lab" text-anchor="start">WAPE commandes</text><rect class="v-pt v-fort" x="150" y="260" width="240.0" height="12" rx="3"/><text x="400.0" y="271" class="v-num v-att" text-anchor="start">0,621</text></svg></div></div></div>
+            <div class="flottants" aria-hidden="true"><span class="flot f1" data-vitesse="1.4">17 semaines de test</span><span class="flot f2" data-vitesse="2.3">biais -1,4 %</span></div>
+          </div>
+        </article>
+        <article class="diapo" id="sav" data-projet="sav" aria-labelledby="t-sav">
+          <div class="diapo-texte">
+            <p class="diapo-cat" data-diapo>En production</p>
+            <h3 id="t-sav"><span class="masque"><span class="masque-in">Agent IA de service après-vente</span></span></h3>
+            <p class="ctx" data-diapo>Industrie de la menuiserie. Répondre aux demandes clients à partir de la documentation technique et des données de commande.</p>
+            <dl class="met" data-diapo>
+        <div><dt class="chiffre">111</dt><dd><small>notices techniques PDF indexées, avec vidéos transcrites et catalogue</small></dd></div>
+        <div><dt class="chiffre">2</dt><dd><small>sources interrogées en parallèle : base documentaire et API ERP temps réel</small></dd></div>
+      </dl>
+            <details class="detail" data-diapo><summary><span class="off">Voir le détail</span><span class="on">Replier</span></summary><div class="detail-corps"><ul class="faits-l">
+        <li><b>Orchestration.</b> Base documentaire RAG et API ERP (commandes, devis) interrogées en parallèle, croisement BigQuery entre commande, catalogue et fiche technique.</li>
+        <li><b>Réponse structurée.</b> Synthèse de commande, diagnostic technique, sources PDF citées, liens de suivi. Chaque réponse est sourcée.</li>
+        <li><b>Intégration industrialisée des notices.</b> Validation de schéma Pydantic, journalisation structurée, manifeste d’exécution. Mise en production sans régression.</li>
+        <li><b>Pilotage et transfert.</b> Tableau de bord Looker Studio (satisfaction, typologie des demandes). Formation du développeur interne du client à la maintenance et à l’évolution de la solution.</li>
+      </ul>
+      <p class="pile"><b>Outils.</b> Vertex AI Agent Builder, Gemini 2.5 Flash, Cloud Run, BigQuery, Cloud Storage, Python.</p></div></details>
+          </div>
+          <div class="diapo-visuel">
+            <div class="cadre-vis"><div class="masque-vis"><div class="visuel" data-pastille="Voir le détail"><svg class="vis" viewBox="0 0 480 300" aria-hidden="true" focusable="false" preserveAspectRatio="xMidYMid meet"><rect class="v-boite" x="20" y="122" width="118" height="56" rx="10"/><text x="34" y="147.0" class="v-lab v-clair" text-anchor="start">Demande</text><text x="34" y="165.0" class="v-lab v-fin" text-anchor="start">client</text><rect class="v-boite" x="178" y="40" width="172" height="64" rx="10"/><text x="192" y="69.0" class="v-lab v-clair" text-anchor="start">Base documentaire</text><text x="192" y="87.0" class="v-lab v-fin" text-anchor="start">111 notices PDF</text><rect class="v-boite" x="178" y="196" width="172" height="64" rx="10"/><text x="192" y="225.0" class="v-lab v-clair" text-anchor="start">API ERP</text><text x="192" y="243.0" class="v-lab v-fin" text-anchor="start">temps réel</text><rect class="v-boite v-boite-acc" x="372" y="116" width="92" height="68" rx="10"/><text x="386" y="147.0" class="v-lab v-clair" text-anchor="start">Réponse</text><text x="386" y="165.0" class="v-lab v-fin" text-anchor="start">sourcée</text><path class="v-flux" d="M138 140 C158 140 158 72 178 72"/><path class="v-flux" d="M138 160 C158 160 158 228 178 228"/><path class="v-flux" d="M350 72 C362 72 360 140 372 140"/><path class="v-flux" d="M350 228 C362 228 360 160 372 160"/><text x="264" y="150" class="v-lab v-fin" text-anchor="middle">en parallèle</text></svg></div></div></div>
+            <div class="flottants" aria-hidden="true"><span class="flot f1" data-vitesse="1.4">Gemini 2.5 Flash</span><span class="flot f2" data-vitesse="2.3">sources PDF citées</span></div>
+          </div>
+        </article>
+        <article class="diapo" id="mcp" data-projet="mcp" aria-labelledby="t-mcp">
+          <div class="diapo-texte">
+            <p class="diapo-cat" data-diapo>En production</p>
+            <h3 id="t-mcp"><span class="masque"><span class="masque-in">Serveur MCP de pilotage d’activité</span></span></h3>
+            <p class="ctx" data-diapo>Outil interne, en production. Le système d’information d’un organisme de formation certifié, piloté en langage naturel.</p>
+            <dl class="met" data-diapo>
+        <div><dt class="chiffre">64</dt><dd><small>outils métier exposés au modèle de langage via le protocole MCP</small></dd></div>
+        <div><dt class="chiffre">14</dt><dd><small>générateurs de documents réglementaires au format Word</small></dd></div>
+        <div><dt class="chiffre">11</dt><dd><small>tables PostgreSQL, logique métier séparée du routage</small></dd></div>
+        <div><dt class="chiffre">OAuth 2.0</dt><dd><small>Resource Server (RFC 9728) adossé à Keycloak</small></dd></div>
+      </dl>
+            <details class="detail" data-diapo><summary><span class="off">Voir le détail</span><span class="on">Replier</span></summary><div class="detail-corps"><ul class="faits-l">
+        <li><b>Périmètre.</b> Clients, sessions, inscriptions, boîte mail, indicateurs de conformité Qualiopi, en remplacement d’une gestion manuelle.</li>
+        <li><b>Documents.</b> Contrats, convocations, attestations, feuilles de présence et certificats de réalisation produits directement au format Word.</li>
+        <li><b>Architecture.</b> Couches séparant le routage de la logique métier. Migration du transport STDIO vers HTTP Streamable sans modifier la logique.</li>
+        <li><b>Sécurité.</b> Jeton à comparaison en temps constant, puis Resource Server OAuth 2.0 adossé à Keycloak.</li>
+        <li><b>Production.</b> Kubernetes, image Docker multi-étages non privilégiée, base PostgreSQL managée, TLS automatisé, audit d’image sans secret embarqué.</li>
+      </ul>
+      <p class="pile"><b>Outils.</b> TypeScript, Node.js, PostgreSQL, MCP SDK, Docker, Kubernetes, OAuth 2.0, Keycloak.</p></div></details>
+          </div>
+          <div class="diapo-visuel">
+            <div class="cadre-vis"><div class="masque-vis"><div class="visuel" data-pastille="Voir le détail"><svg class="vis" viewBox="0 0 480 300" aria-hidden="true" focusable="false" preserveAspectRatio="xMidYMid meet"><path class="v-rayon" d="M170 150L170.0 42.0M170 150L180.6 42.5M170 150L191.1 44.1M170 150L201.4 46.7M170 150L211.3 50.2M170 150L220.9 54.8M170 150L230.0 60.2M170 150L238.5 66.5M170 150L246.4 73.6M170 150L253.5 81.5M170 150L259.8 90.0M170 150L265.2 99.1M170 150L269.8 108.7M170 150L273.3 118.6"/><path class="v-pt" d="M272.4 125.4h7v7h-7zM274.0 135.9h7v7h-7zM274.5 146.5h7v7h-7zM274.0 157.1h7v7h-7zM272.4 167.6h7v7h-7zM269.8 177.9h7v7h-7zM266.3 187.8h7v7h-7zM261.7 197.4h7v7h-7zM256.3 206.5h7v7h-7zM250.0 215.0h7v7h-7zM242.9 222.9h7v7h-7zM235.0 230.0h7v7h-7zM226.5 236.3h7v7h-7zM217.4 241.7h7v7h-7zM207.8 246.3h7v7h-7zM197.9 249.8h7v7h-7zM187.6 252.4h7v7h-7zM177.1 254.0h7v7h-7zM166.5 254.5h7v7h-7zM155.9 254.0h7v7h-7zM145.4 252.4h7v7h-7zM135.1 249.8h7v7h-7zM125.2 246.3h7v7h-7zM115.6 241.7h7v7h-7zM106.5 236.3h7v7h-7zM98.0 230.0h7v7h-7zM90.1 222.9h7v7h-7zM83.0 215.0h7v7h-7zM76.7 206.5h7v7h-7zM71.3 197.4h7v7h-7zM66.7 187.8h7v7h-7zM63.2 177.9h7v7h-7zM60.6 167.6h7v7h-7zM59.0 157.1h7v7h-7zM58.5 146.5h7v7h-7zM59.0 135.9h7v7h-7zM60.6 125.4h7v7h-7zM63.2 115.1h7v7h-7zM66.7 105.2h7v7h-7zM71.3 95.6h7v7h-7zM76.7 86.5h7v7h-7zM83.0 78.0h7v7h-7zM90.1 70.1h7v7h-7zM98.0 63.0h7v7h-7zM106.5 56.7h7v7h-7zM115.6 51.3h7v7h-7zM125.2 46.7h7v7h-7zM135.1 43.2h7v7h-7zM145.4 40.6h7v7h-7zM155.9 39.0h7v7h-7z"/><path class="v-grad" d="M166.5 38.5h7v7h-7zM177.1 39.0h7v7h-7zM187.6 40.6h7v7h-7zM197.9 43.2h7v7h-7zM207.8 46.7h7v7h-7zM217.4 51.3h7v7h-7zM226.5 56.7h7v7h-7zM235.0 63.0h7v7h-7zM242.9 70.1h7v7h-7zM250.0 78.0h7v7h-7zM256.3 86.5h7v7h-7zM261.7 95.6h7v7h-7zM266.3 105.2h7v7h-7zM269.8 115.1h7v7h-7z"/><circle class="v-boite v-boite-acc" cx="170" cy="150" r="36"/><text x="170" y="157" class="v-num" text-anchor="middle">MCP</text><text x="318" y="110" class="v-num v-gros" text-anchor="start">64</text><text x="318" y="140" class="v-lab" text-anchor="start">outils métier</text><rect class="v-grad" x="318" y="168" width="10" height="10" rx="2"/><text x="336" y="177" class="v-lab" text-anchor="start">14 générateurs</text><text x="336" y="195" class="v-lab v-fin" text-anchor="start">de documents</text><text x="318" y="236" class="v-lab v-fin" text-anchor="start">11 tables PostgreSQL</text></svg></div></div></div>
+            <div class="flottants" aria-hidden="true"><span class="flot f1" data-vitesse="1.4">OAuth 2.0</span><span class="flot f2" data-vitesse="2.3">STDIO vers HTTP Streamable</span></div>
+          </div>
+        </article>
+        <article class="diapo" id="gouvernance" data-projet="gouvernance" aria-labelledby="t-gouvernance">
+          <div class="diapo-texte">
+            <p class="diapo-cat" data-diapo>Chantier interne</p>
+            <h3 id="t-gouvernance"><span class="masque"><span class="masque-in">Structuration technique et gouvernance des développements</span></span></h3>
+            <p class="ctx" data-diapo>Chantier interne transverse, en cours. Donner au cabinet un socle commun de dépôts, de contrôles et de méthode.</p>
+            
+            <details class="detail" data-diapo><summary><span class="off">Voir le détail</span><span class="on">Replier</span></summary><div class="detail-corps"><ul class="faits-l">
+        <li><b>Dépôt partagé.</b> Conception, avec le second développeur de l’équipe, du dépôt GitHub de l’entreprise : organisation des dépôts, chaîne de traitement, outillage et contrôles à l’entrée (détection de secrets par gitleaks, analyse de sécurité automatisée).</li>
+        <li><b>Méthode.</b> Instauration d’une revue de sécurité systématique à chaque lot livré, formalisation de la méthodologie data et des critères d’arbitrage des outils et frameworks.</li>
+        <li><b>Infrastructure.</b> Deux applications déployées et maintenues en production sur le cluster Kubernetes OVH, contribution à son évolution : nœud de secours, nœud dédié à la montée en charge.</li>
+      </ul>
+      <p class="pile"><b>Outils.</b> GitHub, gitleaks, Kubernetes, Docker.</p></div></details>
+          </div>
+          <div class="diapo-visuel">
+            <div class="cadre-vis"><div class="masque-vis"><div class="visuel" data-pastille="Voir le détail"><svg class="vis" viewBox="0 0 480 300" aria-hidden="true" focusable="false" preserveAspectRatio="xMidYMid meet"><path class="v-trait" d="M44 150H436"/><path class="v-flux" d="M44 150H436"/><circle class="v-boite " cx="44" cy="150" r="13"/><path class="v-coche" d="M39 150l3.5 4l7 -8"/><text x="44" y="108" class="v-lab v-clair" text-anchor="middle">Dépôt</text><text x="44" y="126" class="v-lab v-fin" text-anchor="middle">partagé</text><circle class="v-boite " cx="142" cy="150" r="13"/><path class="v-coche" d="M137 150l3.5 4l7 -8"/><text x="142" y="206" class="v-lab v-clair" text-anchor="middle">gitleaks</text><text x="142" y="224" class="v-lab v-fin" text-anchor="middle">secrets</text><circle class="v-boite " cx="240" cy="150" r="13"/><path class="v-coche" d="M235 150l3.5 4l7 -8"/><text x="240" y="108" class="v-lab v-clair" text-anchor="middle">Analyse</text><text x="240" y="126" class="v-lab v-fin" text-anchor="middle">de sécurité</text><circle class="v-boite " cx="338" cy="150" r="13"/><path class="v-coche" d="M333 150l3.5 4l7 -8"/><text x="338" y="206" class="v-lab v-clair" text-anchor="middle">Revue</text><text x="338" y="224" class="v-lab v-fin" text-anchor="middle">à chaque lot</text><circle class="v-boite v-boite-acc" cx="436" cy="150" r="13"/><path class="v-coche" d="M431 150l3.5 4l7 -8"/><text x="436" y="108" class="v-lab v-clair" text-anchor="middle">Kubernetes</text><text x="436" y="126" class="v-lab v-fin" text-anchor="middle">2 applications</text></svg></div></div></div>
+            <div class="flottants" aria-hidden="true"><span class="flot f1" data-vitesse="1.4">gitleaks</span><span class="flot f2" data-vitesse="2.3">nœud de secours</span></div>
+          </div>
+        </article>
+        <span class="ancre" id="recherche"></span>
+        <article class="diapo" id="variants" data-projet="variants" aria-labelledby="t-variants">
+          <div class="diapo-texte">
+            <p class="diapo-cat" data-diapo>Recherche, Master 1</p>
+            <h3 id="t-variants"><span class="masque"><span class="masque-in"><a href="https://github.com/mahebegnis/variants-genetiques-ml">Classification de variants génétiques</a></span></span></h3>
+            <p class="ctx" data-diapo>Données ClinVar. Deux questions sur un même jeu : ce variant est-il pathogène, et les laboratoires seront-ils d’accord entre eux.</p>
+            <dl class="met" data-diapo>
+        <div><dt class="chiffre">0,9962</dt><dd><small>AUC en pathogénicité, XGBoost, jeu de test isolé de 5 710 variants</small></dd></div>
+        <div><dt class="chiffre">3,9 %</dt><dd><small>de variants pathogènes manqués, 44 sur 1 124</small></dd></div>
+        <div><dt class="chiffre">0,795</dt><dd><small>AUC en conflictualité, un problème au signal 25 fois plus faible</small></dd></div>
+        <div><dt class="chiffre">8</dt><dd><small>modèles comparés, validation croisée stratifiée à 5 plis</small></dd></div>
+      </dl>
+            <details class="detail" data-diapo><summary><span class="off">Voir le détail</span><span class="on">Replier</span></summary><div class="detail-corps"><ul class="faits-l">
+        <li><b>Données.</b> Deux sources ClinVar croisées : le jeu Kaggle pour les annotations génomiques, le variant_summary du NCBI pour les labels cliniques. 96 % de correspondance. 28 546 variants à label fiable pour la pathogénicité, 65 188 pour la conflictualité.</li>
+        <li><b>Valeurs manquantes non imputées.</b> Mécanisme MNAR identifié : l’absence de score SIFT pour les variants non missense est une information, pas un manque. Les modèles à base d’arbres la traitent nativement.</li>
+        <li><b>Protocole.</b> 8 modèles, de la régression logistique aux gradient boosting, évalués par validation croisée stratifiée. Jeu de test touché une seule fois, à la fin.</li>
+        <li><b>Test de DeLong.</b> Supériorité des gradient boosting sur la régression logistique, p inférieur à 0,0001.</li>
+        <li><b>Variable créée.</b> af_disagreement, écart-type de la fréquence allélique entre trois bases populationnelles. Première variable pour prédire les désaccords entre laboratoires.</li>
+        <li><b>Profil d’erreur choisi.</b> Plus de faux positifs que de faux négatifs : sur-investiguer plutôt que manquer un variant pathogène.</li>
+      </ul>
+      <p class="pile"><b>Outils.</b> Python, XGBoost, LightGBM, CatBoost, scikit-learn.</p></div></details>
+          </div>
+          <div class="diapo-visuel">
+            <div class="cadre-vis"><div class="masque-vis"><div class="visuel" data-pastille="Voir le détail"><svg class="vis" viewBox="0 0 480 300" aria-hidden="true" focusable="false" preserveAspectRatio="xMidYMid meet"><text x="26" y="34" class="v-lab" text-anchor="start">1 124 variants pathogènes du jeu de test</text><text x="26" y="54" class="v-lab v-fin" text-anchor="start">44 manqués, soit 3,9 %</text><defs><pattern id="g-var" x="26" y="70" width="7.4" height="7.4" patternUnits="userSpaceOnUse"><rect class="v-pt v-fort" width="5.2" height="5.2"/></pattern></defs><rect x="26" y="70" width="347.8" height="162.8" fill="url(#g-var)"/><defs><pattern id="g-var2" x="26" y="232.8" width="7.4" height="7.4" patternUnits="userSpaceOnUse"><rect class="v-pt v-fort" width="5.2" height="5.2"/></pattern></defs><rect x="26" y="232.8" width="340.4" height="7.4" fill="url(#g-var2)"/><path class="v-acc" d="M366.4 232.8h5.2v5.2h-5.2zM26.0 240.2h5.2v5.2h-5.2zM33.4 240.2h5.2v5.2h-5.2zM40.8 240.2h5.2v5.2h-5.2zM48.2 240.2h5.2v5.2h-5.2zM55.6 240.2h5.2v5.2h-5.2zM63.0 240.2h5.2v5.2h-5.2zM70.4 240.2h5.2v5.2h-5.2zM77.8 240.2h5.2v5.2h-5.2zM85.2 240.2h5.2v5.2h-5.2zM92.6 240.2h5.2v5.2h-5.2zM100.0 240.2h5.2v5.2h-5.2zM107.4 240.2h5.2v5.2h-5.2zM114.8 240.2h5.2v5.2h-5.2zM122.2 240.2h5.2v5.2h-5.2zM129.6 240.2h5.2v5.2h-5.2zM137.0 240.2h5.2v5.2h-5.2zM144.4 240.2h5.2v5.2h-5.2zM151.8 240.2h5.2v5.2h-5.2zM159.2 240.2h5.2v5.2h-5.2zM166.6 240.2h5.2v5.2h-5.2zM174.0 240.2h5.2v5.2h-5.2zM181.4 240.2h5.2v5.2h-5.2zM188.8 240.2h5.2v5.2h-5.2zM196.2 240.2h5.2v5.2h-5.2zM203.6 240.2h5.2v5.2h-5.2zM211.0 240.2h5.2v5.2h-5.2zM218.4 240.2h5.2v5.2h-5.2zM225.8 240.2h5.2v5.2h-5.2zM233.2 240.2h5.2v5.2h-5.2zM240.6 240.2h5.2v5.2h-5.2zM248.0 240.2h5.2v5.2h-5.2zM255.4 240.2h5.2v5.2h-5.2zM262.8 240.2h5.2v5.2h-5.2zM270.2 240.2h5.2v5.2h-5.2zM277.6 240.2h5.2v5.2h-5.2zM285.0 240.2h5.2v5.2h-5.2zM292.4 240.2h5.2v5.2h-5.2zM299.8 240.2h5.2v5.2h-5.2zM307.2 240.2h5.2v5.2h-5.2zM314.6 240.2h5.2v5.2h-5.2zM322.0 240.2h5.2v5.2h-5.2zM329.4 240.2h5.2v5.2h-5.2zM336.8 240.2h5.2v5.2h-5.2z"/><text x="454" y="50" class="v-num v-gros" text-anchor="end">0,9962</text><text x="454" y="74" class="v-lab v-fin" text-anchor="end">AUC</text></svg></div></div></div>
+            <div class="flottants" aria-hidden="true"><span class="flot f1" data-vitesse="1.4">Test de DeLong</span><span class="flot f2" data-vitesse="2.3">af_disagreement</span></div>
+          </div>
+        </article>
+        <article class="diapo" id="prisma" data-projet="prisma" aria-labelledby="t-prisma">
+          <div class="diapo-texte">
+            <p class="diapo-cat" data-diapo>Recherche, Master 1</p>
+            <h3 id="t-prisma"><span class="masque"><span class="masque-in"><a href="https://github.com/mahebegnis/prisma-digital-twins-smart-buildings">Revue systématique PRISMA 2020</a></span></span></h3>
+            <p class="ctx" data-diapo>Jumeaux numériques pour l’optimisation énergétique des bâtiments intelligents, 2015 à 2025. Travail à cinq auteurs.</p>
+            <dl class="met" data-diapo>
+        <div><dt class="chiffre">29</dt><dd><small>pages au format IEEE, 52 références</small></dd></div>
+        <div><dt class="chiffre">7</dt><dd><small>scripts Python, une décision tracée en CSV à chaque étape</small></dd></div>
+      </dl>
+            <details class="detail" data-diapo><summary><span class="off">Voir le détail</span><span class="on">Replier</span></summary><div class="detail-corps"><ul class="ent">
+        <li><span class="chiffre">704</span><div><small>références brutes : Scopus 343, Web of Science 150, Springer 144, IEEE 67</small></div></li>
+        <li><span class="chiffre">548</span><div><small>après déduplication sur DOI puis titre et année</small></div></li>
+        <li><span class="chiffre">167</span><div><small>après présélection sur titre et résumé assistée par LLM, validée par les cinq auteurs</small></div></li>
+        <li><span class="chiffre">130</span><div><small>après application de quatre critères cumulatifs</small></div></li>
+        <li><span class="chiffre">51</span><div><small>textes intégraux lus, le reste étant inaccessible</small></div></li>
+        <li><span class="chiffre">45</span><div><small>études incluses dans la synthèse, cartographiées sur 80 motifs techniques</small></div></li>
+      </ul>
+      <p class="pile"><b>Publication.</b> Licence CC BY 4.0, fichier de citation, article et pipeline dans le dépôt.</p></div></details>
+          </div>
+          <div class="diapo-visuel">
+            <div class="cadre-vis"><div class="masque-vis"><div class="visuel" data-pastille="Voir le détail"><svg class="vis" viewBox="0 0 480 300" aria-hidden="true" focusable="false" preserveAspectRatio="xMidYMid meet"><text x="24" y="30" class="v-lab" text-anchor="start">704 références, 45 études incluses</text><rect class="v-pt v-fort" x="60.0" y="52" width="360.0" height="24" rx="4"/><text x="430.0" y="69" class="v-num v-petit" text-anchor="start">704</text><rect class="v-pt v-fort" x="99.9" y="90" width="280.2" height="24" rx="4"/><text x="390.1136363636364" y="107" class="v-num v-petit" text-anchor="start">548</text><rect class="v-pt v-fort" x="197.3" y="128" width="85.4" height="24" rx="4"/><text x="292.6988636363636" y="145" class="v-num v-petit" text-anchor="start">167</text><rect class="v-pt v-fort" x="206.8" y="166" width="66.5" height="24" rx="4"/><text x="283.2386363636364" y="183" class="v-num v-petit" text-anchor="start">130</text><rect class="v-pt v-fort" x="227.0" y="204" width="26.1" height="24" rx="4"/><text x="264" y="221" class="v-num v-petit" text-anchor="start">51</text><rect class="v-grad" x="228.5" y="242" width="23.0" height="24" rx="4"/><text x="264" y="259" class="v-num v-petit" text-anchor="start">45</text></svg></div></div></div>
+            <div class="flottants" aria-hidden="true"><span class="flot f1" data-vitesse="1.4">CC BY 4.0</span><span class="flot f2" data-vitesse="2.3">cinq auteurs</span></div>
+          </div>
+        </article>
+      </div>
+      <div class="vitrine-pied" aria-hidden="true"><span class="progres"><i></i></span><span class="compte"><b>1</b> / 6</span></div>
+    </div>
+  </div>
+</section>
+
+<section class="index" id="realisations" aria-labelledby="t-real">
+  <div class="col">
+    <h2 id="t-real" data-revele>Autres réalisations</h2>
+    <ol class="index-liste">
+      <li class="index-ligne" data-i="0"><b>Service d’auto-diagnostic IA</b><em>produit interne</em><span>Produit interne, en production. De la conception au déploiement : FastAPI, PostgreSQL, rapport PDF généré et envoyé automatiquement, 28 contrôles automatiques dont 17 bloquants avant envoi, Kubernetes.</span></li>
+      <li class="index-ligne" data-i="1"><b>Classification et extraction documentaire</b><em>organisme de formation</em><span>Preuve de concept sous contrainte RGPD : 43 classes, 108 documents réels, précision 0,967, rappel 0,947, F1 0,957. BigQuery en région européenne, données sensibles au sens de l’article 9.</span></li>
+      <li class="index-ligne" data-i="2"><b>Agent juridique</b><em>fédération professionnelle</em><span>Corpus de commande publique. Étude comparative de trois architectures RAG sur protocole d’évaluation reproductible.</span></li>
+      <li class="index-ligne" data-i="3"><b>Extraction de bons de travaux manuscrits</b><em>groupe de propreté</em><span>Modèle de vision, évaluation contre un jeu de référence annoté à la main, champs peu fiables signalés comme indicatifs.</span></li>
+      <li class="index-ligne" data-i="4"><b>Automatisation des contrats pédagogiques</b><em>formation professionnelle</em><span>Service Python, application web de validation, intégration SharePoint via Microsoft Graph, RGPD dès la conception.</span></li>
+    </ol>
+  </div>
+  <div class="apercu" aria-hidden="true"><div class="apercu-piste"><svg class="vis" viewBox="0 0 480 300" aria-hidden="true" focusable="false" preserveAspectRatio="xMidYMid meet"><path class="v-grad" d="M60.0 70.0h30v30h-30zM112.0 70.0h30v30h-30zM164.0 70.0h30v30h-30zM216.0 70.0h30v30h-30zM268.0 70.0h30v30h-30zM320.0 70.0h30v30h-30zM372.0 70.0h30v30h-30zM60.0 116.0h30v30h-30zM112.0 116.0h30v30h-30zM164.0 116.0h30v30h-30zM216.0 116.0h30v30h-30zM268.0 116.0h30v30h-30zM320.0 116.0h30v30h-30zM372.0 116.0h30v30h-30zM60.0 162.0h30v30h-30zM112.0 162.0h30v30h-30zM164.0 162.0h30v30h-30z"/><path class="v-pt" d="M216.0 162.0h30v30h-30zM268.0 162.0h30v30h-30zM320.0 162.0h30v30h-30zM372.0 162.0h30v30h-30zM60.0 208.0h30v30h-30zM112.0 208.0h30v30h-30zM164.0 208.0h30v30h-30zM216.0 208.0h30v30h-30zM268.0 208.0h30v30h-30zM320.0 208.0h30v30h-30zM372.0 208.0h30v30h-30z"/><text x="60" y="50" class="v-lab" text-anchor="start">28 contrôles automatiques, dont 17 bloquants avant envoi</text></svg><svg class="vis" viewBox="0 0 480 300" aria-hidden="true" focusable="false" preserveAspectRatio="xMidYMid meet"><path class="v-pt v-fort" d="M54.0 78.0h9v9h-9zM70.0 78.0h9v9h-9zM86.0 78.0h9v9h-9zM102.0 78.0h9v9h-9zM118.0 78.0h9v9h-9zM134.0 78.0h9v9h-9zM150.0 78.0h9v9h-9zM166.0 78.0h9v9h-9zM182.0 78.0h9v9h-9zM198.0 78.0h9v9h-9zM214.0 78.0h9v9h-9zM54.0 94.0h9v9h-9zM70.0 94.0h9v9h-9zM86.0 94.0h9v9h-9zM102.0 94.0h9v9h-9zM118.0 94.0h9v9h-9zM134.0 94.0h9v9h-9zM150.0 94.0h9v9h-9zM166.0 94.0h9v9h-9zM182.0 94.0h9v9h-9zM198.0 94.0h9v9h-9zM214.0 94.0h9v9h-9zM54.0 110.0h9v9h-9zM70.0 110.0h9v9h-9zM86.0 110.0h9v9h-9zM102.0 110.0h9v9h-9zM118.0 110.0h9v9h-9zM134.0 110.0h9v9h-9zM150.0 110.0h9v9h-9zM166.0 110.0h9v9h-9zM182.0 110.0h9v9h-9zM198.0 110.0h9v9h-9zM214.0 110.0h9v9h-9zM54.0 126.0h9v9h-9zM70.0 126.0h9v9h-9zM86.0 126.0h9v9h-9zM102.0 126.0h9v9h-9zM118.0 126.0h9v9h-9zM134.0 126.0h9v9h-9zM150.0 126.0h9v9h-9zM166.0 126.0h9v9h-9zM182.0 126.0h9v9h-9zM198.0 126.0h9v9h-9z"/><text x="54" y="52" class="v-lab" text-anchor="start">43 classes, 108 documents réels</text><text x="270" y="92" class="v-lab v-fin" text-anchor="start">précision</text><rect class="v-pt" x="270" y="100" width="180" height="10" rx="3"/><rect class="v-grad" x="270" y="100" width="174.1" height="10" rx="3"/><text x="450" y="92" class="v-num v-petit" text-anchor="end">0,967</text><text x="270" y="144" class="v-lab v-fin" text-anchor="start">rappel</text><rect class="v-pt" x="270" y="152" width="180" height="10" rx="3"/><rect class="v-grad" x="270" y="152" width="170.5" height="10" rx="3"/><text x="450" y="144" class="v-num v-petit" text-anchor="end">0,947</text><text x="270" y="196" class="v-lab v-fin" text-anchor="start">F1</text><rect class="v-pt" x="270" y="204" width="180" height="10" rx="3"/><rect class="v-grad" x="270" y="204" width="172.3" height="10" rx="3"/><text x="450" y="196" class="v-num v-petit" text-anchor="end">0,957</text></svg><svg class="vis" viewBox="0 0 480 300" aria-hidden="true" focusable="false" preserveAspectRatio="xMidYMid meet"><text x="30" y="44" class="v-lab" text-anchor="start">Trois architectures RAG, un même protocole d’évaluation</text><rect class="v-boite" x="30" y="84" width="230" height="40" rx="10"/><text x="46" y="109" class="v-lab v-clair" text-anchor="start">Architecture 1</text><path class="v-flux" d="M260 104C300 104 300 168 336 168"/><rect class="v-boite" x="30" y="146" width="230" height="40" rx="10"/><text x="46" y="171" class="v-lab v-clair" text-anchor="start">Architecture 2</text><path class="v-flux" d="M260 166C300 166 300 168 336 168"/><rect class="v-boite" x="30" y="208" width="230" height="40" rx="10"/><text x="46" y="233" class="v-lab v-clair" text-anchor="start">Architecture 3</text><path class="v-flux" d="M260 228C300 228 300 168 336 168"/><rect class="v-boite v-boite-acc" x="336" y="136" width="124" height="64" rx="10"/><text x="350" y="165.0" class="v-lab v-clair" text-anchor="start">Évaluation</text><text x="350" y="183.0" class="v-lab v-fin" text-anchor="start">reproductible</text></svg><svg class="vis" viewBox="0 0 480 300" aria-hidden="true" focusable="false" preserveAspectRatio="xMidYMid meet"><rect class="v-boite" x="24" y="40" width="432" height="232" rx="12"/><rect class="v-grad" x="40" y="70" width="180" height="28" rx="6"/><rect class="v-grad" x="240" y="70" width="200" height="28" rx="6"/><rect class="v-tirets" x="40" y="120" width="400" height="28" rx="6"/><rect class="v-grad" x="40" y="170" width="260" height="28" rx="6"/><rect class="v-tirets" x="320" y="170" width="120" height="28" rx="6"/><rect class="v-grad" x="40" y="220" width="400" height="28" rx="6"/><rect class="v-grad" x="40" y="252" width="18" height="12" rx="3"/><text x="64" y="262" class="v-lab v-fin" text-anchor="start">champs fiables</text><rect class="v-tirets" x="176" y="252" width="18" height="12" rx="3"/><text x="200" y="262" class="v-lab v-fin" text-anchor="start">champs signalés comme indicatifs</text></svg><svg class="vis" viewBox="0 0 480 300" aria-hidden="true" focusable="false" preserveAspectRatio="xMidYMid meet"><rect class="v-boite" x="24" y="110" width="128" height="64" rx="10"/><text x="38" y="139.0" class="v-lab v-clair" text-anchor="start">Service</text><text x="38" y="157.0" class="v-lab v-fin" text-anchor="start">Python</text><rect class="v-boite" x="176" y="110" width="128" height="64" rx="10"/><text x="190" y="139.0" class="v-lab v-clair" text-anchor="start">Application</text><text x="190" y="157.0" class="v-lab v-fin" text-anchor="start">de validation</text><rect class="v-boite v-boite-acc" x="328" y="110" width="128" height="64" rx="10"/><text x="342" y="139.0" class="v-lab v-clair" text-anchor="start">SharePoint</text><text x="342" y="157.0" class="v-lab v-fin" text-anchor="start">Microsoft Graph</text><path class="v-flux" d="M152 142H176"/><path class="v-flux" d="M304 142H328"/><text x="24" y="232" class="v-lab v-fin" text-anchor="start">RGPD dès la conception</text></svg></div></div>
+</section>
+
+<section id="competences" aria-labelledby="t-comp">
+  <div class="col">
+    <h2 id="t-comp" data-revele>Ce que je sais faire</h2>
+    <p class="manifeste" data-mots>Une même exigence partout : une référence de comparaison, une métrique, un jeu de test.</p>
+    <p class="intro" data-revele>Les outils sont listés parce qu’ils ont servi sur un projet, pas parce qu’ils figurent dans un programme.</p>
+<div class="reg">
     <div><h3>Machine learning</h3>
       <div><p><b>Apprentissage supervisé.</b> LightGBM, CatBoost, XGBoost, Random Forest, régression linéaire et logistique, SVM à noyau gaussien, k plus proches voisins, scikit-learn.</p>
       <p><b>Apprentissage non supervisé.</b> k-means, DBSCAN, clustering agglomératif, analyse en composantes principales.</p>
@@ -284,163 +287,13 @@ body:has(#rapide:checked) .dossier > .g{position:static}
       <p><b>Protection des données.</b> RGPD dès la conception : minimisation, pseudonymisation, purge, journal d’audit, résidence des données en Europe.</p>
       <p class="certif"><b>Certifié SecNumEdu (ANSSI) et atelier RGPD (CNIL).</b></p></div></div>
   </div>
-</div></section>
+  </div>
+</section>
 
-<section id="production"><div class="col">
-  <h2>En production chez des clients</h2>
-  <p class="intro">Chaque projet a été mené du cadrage technique à la recette, en interlocuteur direct du client. Les clients sont désignés par leur secteur.</p>
-
-  <article class="dossier">
-    <div class="g">
-      <h3>Prévision de la demande par machine learning</h3>
-      <p class="ctx">Distribution spécialisée, 40 magasins. Recalibrer le réapprovisionnement à partir de l’historique des ventes.</p>
-      <dl class="met">
-        <div><dt class="chiffre cpt z2" style="--n:201" data-pre="0," data-suf=""><b>0,201</b></dt><dd><small>WAPE du modèle par famille sur 17 semaines de test</small></dd></div>
-        <div><dt class="chiffre cpt z2" style="--n:621" data-pre="0," data-suf=""><b>0,621</b></dt><dd><small>WAPE des commandes passées par les magasins, soit 3 fois moins précis</small></dd></div>
-        <div><dt class="chiffre cpt z2" style="--n:17" data-pre="7," data-suf=" M"><b>7,17 M</b></dt><dd><small>lignes de ventes, 149 semaines, 3 413 produits, 19 familles</small></dd></div>
-        <div><dt class="chiffre">40 / 40</dt><dd><small>magasins et 19 familles sur 19 où le gain est vérifié</small></dd></div>
-      </dl>
-      <input type="checkbox" id="p1" class="vh plus"><label for="p1" class="plus-l"><span class="off">Voir le détail</span><span class="on">Replier</span></label>
-    </div>
-    <div class="detail">
-      <ul class="faits-l">
-        <li><b>Chaîne complète menée seul.</b> Acquisition, nettoyage, analyse exploratoire, ingénierie de variables, entraînement, évaluation, industrialisation.</li>
-        <li><b>Modèle par famille.</b> LightGBM, perte MAE, 43 variables (retards, moyennes glissantes, stock, flux entre séries, calendrier, promotions), 760 séries. MAE 25,5, biais -1,4 %, MASE 0,951.</li>
-        <li><b>Modèle par produit à deux étages.</b> Classifieur d’occurrence puis régresseur conditionnel, sur un panel à 76,8 % de zéros et 63 202 séries. Couverture des ventes portée de 11,7 % à 95,7 %.</li>
-        <li><b>Étude comparative documentée</b> de CatBoost, LightGBM et XGBoost. Découpage temporel strict, jeu de test jamais vu avant l’évaluation finale.</li>
-        <li><b>Décision de modélisation défendue auprès du client.</b> Prédire la demande latente et non les ventes observées, après mise en évidence d’une boucle de rétroaction induite par le stock.</li>
-      </ul>
-      <p class="pile"><b>Outils.</b> Python, pandas, LightGBM, CatBoost, XGBoost, scikit-learn.</p>
-    </div>
-  </article>
-
-  <article class="dossier">
-    <div class="g">
-      <h3>Agent IA de service après-vente</h3>
-      <p class="ctx">Industrie de la menuiserie. Répondre aux demandes clients à partir de la documentation technique et des données de commande.</p>
-      <dl class="met">
-        <div><dt class="chiffre cpt" style="--n:111" data-pre="" data-suf=""><b>111</b></dt><dd><small>notices techniques PDF indexées, avec vidéos transcrites et catalogue</small></dd></div>
-        <div><dt class="chiffre cpt" style="--n:2" data-pre="" data-suf=""><b>2</b></dt><dd><small>sources interrogées en parallèle : base documentaire et API ERP temps réel</small></dd></div>
-      </dl>
-      <input type="checkbox" id="p2" class="vh plus"><label for="p2" class="plus-l"><span class="off">Voir le détail</span><span class="on">Replier</span></label>
-    </div>
-    <div class="detail">
-      <ul class="faits-l">
-        <li><b>Orchestration.</b> Base documentaire RAG et API ERP (commandes, devis) interrogées en parallèle, croisement BigQuery entre commande, catalogue et fiche technique.</li>
-        <li><b>Réponse structurée.</b> Synthèse de commande, diagnostic technique, sources PDF citées, liens de suivi. Chaque réponse est sourcée.</li>
-        <li><b>Intégration industrialisée des notices.</b> Validation de schéma Pydantic, journalisation structurée, manifeste d’exécution. Mise en production sans régression.</li>
-        <li><b>Pilotage et transfert.</b> Tableau de bord Looker Studio (satisfaction, typologie des demandes). Formation du développeur interne du client à la maintenance et à l’évolution de la solution.</li>
-      </ul>
-      <p class="pile"><b>Outils.</b> Vertex AI Agent Builder, Gemini 2.5 Flash, Cloud Run, BigQuery, Cloud Storage, Python.</p>
-    </div>
-  </article>
-
-  <article class="dossier">
-    <div class="g">
-      <h3>Serveur MCP de pilotage d’activité</h3>
-      <p class="ctx">Outil interne, en production. Le système d’information d’un organisme de formation certifié, piloté en langage naturel.</p>
-      <dl class="met">
-        <div><dt class="chiffre cpt" style="--n:64" data-pre="" data-suf=""><b>64</b></dt><dd><small>outils métier exposés au modèle de langage via le protocole MCP</small></dd></div>
-        <div><dt class="chiffre cpt" style="--n:14" data-pre="" data-suf=""><b>14</b></dt><dd><small>générateurs de documents réglementaires au format Word</small></dd></div>
-        <div><dt class="chiffre cpt" style="--n:11" data-pre="" data-suf=""><b>11</b></dt><dd><small>tables PostgreSQL, logique métier séparée du routage</small></dd></div>
-        <div><dt class="chiffre">OAuth 2.0</dt><dd><small>Resource Server (RFC 9728) adossé à Keycloak</small></dd></div>
-      </dl>
-      <input type="checkbox" id="p3" class="vh plus"><label for="p3" class="plus-l"><span class="off">Voir le détail</span><span class="on">Replier</span></label>
-    </div>
-    <div class="detail">
-      <ul class="faits-l">
-        <li><b>Périmètre.</b> Clients, sessions, inscriptions, boîte mail, indicateurs de conformité Qualiopi, en remplacement d’une gestion manuelle.</li>
-        <li><b>Documents.</b> Contrats, convocations, attestations, feuilles de présence et certificats de réalisation produits directement au format Word.</li>
-        <li><b>Architecture.</b> Couches séparant le routage de la logique métier. Migration du transport STDIO vers HTTP Streamable sans modifier la logique.</li>
-        <li><b>Sécurité.</b> Jeton à comparaison en temps constant, puis Resource Server OAuth 2.0 adossé à Keycloak.</li>
-        <li><b>Production.</b> Kubernetes, image Docker multi-étages non privilégiée, base PostgreSQL managée, TLS automatisé, audit d’image sans secret embarqué.</li>
-      </ul>
-      <p class="pile"><b>Outils.</b> TypeScript, Node.js, PostgreSQL, MCP SDK, Docker, Kubernetes, OAuth 2.0, Keycloak.</p>
-    </div>
-  </article>
-
-  <article class="dossier">
-    <div class="g">
-      <h3>Structuration technique et gouvernance des développements</h3>
-      <p class="ctx">Chantier interne transverse, en cours. Donner au cabinet un socle commun de dépôts, de contrôles et de méthode.</p>
-      <input type="checkbox" id="p4" class="vh plus"><label for="p4" class="plus-l"><span class="off">Voir le détail</span><span class="on">Replier</span></label>
-    </div>
-    <div class="detail">
-      <ul class="faits-l">
-        <li><b>Dépôt partagé.</b> Conception, avec le second développeur de l’équipe, du dépôt GitHub de l’entreprise : organisation des dépôts, chaîne de traitement, outillage et contrôles à l’entrée (détection de secrets par gitleaks, analyse de sécurité automatisée).</li>
-        <li><b>Méthode.</b> Instauration d’une revue de sécurité systématique à chaque lot livré, formalisation de la méthodologie data et des critères d’arbitrage des outils et frameworks.</li>
-        <li><b>Infrastructure.</b> Deux applications déployées et maintenues en production sur le cluster Kubernetes OVH, contribution à son évolution : nœud de secours, nœud dédié à la montée en charge.</li>
-      </ul>
-      <p class="pile"><b>Outils.</b> GitHub, gitleaks, Kubernetes, Docker.</p>
-    </div>
-  </article>
-
-  <h3 style="font-size:clamp(1.5rem,2.4vw,1.95rem);margin:clamp(2rem,4vw,3rem) 0 .8rem">Autres réalisations</h3>
-  <ul class="compact">
-    <li><b>Service d’auto-diagnostic IA</b><span>Produit interne, en production. De la conception au déploiement : FastAPI, PostgreSQL, rapport PDF généré et envoyé automatiquement, 28 contrôles automatiques dont 17 bloquants avant envoi, Kubernetes.<em>produit interne</em></span></li>
-    <li><b>Classification et extraction documentaire</b><span>Preuve de concept sous contrainte RGPD : 43 classes, 108 documents réels, précision 0,967, rappel 0,947, F1 0,957. BigQuery en région européenne, données sensibles au sens de l’article 9.<em>organisme de formation</em></span></li>
-    <li><b>Agent juridique</b><span>Corpus de commande publique. Étude comparative de trois architectures RAG sur protocole d’évaluation reproductible.<em>fédération professionnelle</em></span></li>
-    <li><b>Extraction de bons de travaux manuscrits</b><span>Modèle de vision, évaluation contre un jeu de référence annoté à la main, champs peu fiables signalés comme indicatifs.<em>groupe de propreté</em></span></li>
-    <li><b>Automatisation des contrats pédagogiques</b><span>Service Python, application web de validation, intégration SharePoint via Microsoft Graph, RGPD dès la conception.<em>formation professionnelle</em></span></li>
-  </ul>
-</div></section>
-
-<section id="recherche"><div class="col">
-  <h2>Projets de recherche</h2>
-  <p class="intro">Deux travaux de Master 1, publiés en entier sur GitHub : données, code, décisions et résultats.</p>
-
-  <article class="dossier">
-    <div class="g">
-      <h3><a href="https://github.com/mahebegnis/variants-genetiques-ml">Classification de variants génétiques</a></h3>
-      <p class="ctx">Données ClinVar. Deux questions sur un même jeu : ce variant est-il pathogène, et les laboratoires seront-ils d’accord entre eux.</p>
-      <dl class="met">
-        <div><dt class="chiffre cpt z2" style="--n:9962" data-pre="0," data-suf=""><b>0,9962</b></dt><dd><small>AUC en pathogénicité, XGBoost, jeu de test isolé de 5 710 variants</small></dd></div>
-        <div><dt class="chiffre cpt" style="--n:9" data-pre="3," data-suf=" %"><b>3,9 %</b></dt><dd><small>de variants pathogènes manqués, 44 sur 1 124</small></dd></div>
-        <div><dt class="chiffre cpt z2" style="--n:795" data-pre="0," data-suf=""><b>0,795</b></dt><dd><small>AUC en conflictualité, un problème au signal 25 fois plus faible</small></dd></div>
-        <div><dt class="chiffre cpt" style="--n:8" data-pre="" data-suf=""><b>8</b></dt><dd><small>modèles comparés, validation croisée stratifiée à 5 plis</small></dd></div>
-      </dl>
-      <input type="checkbox" id="p5" class="vh plus"><label for="p5" class="plus-l"><span class="off">Voir le détail</span><span class="on">Replier</span></label>
-    </div>
-    <div class="detail">
-      <ul class="faits-l">
-        <li><b>Données.</b> Deux sources ClinVar croisées : le jeu Kaggle pour les annotations génomiques, le variant_summary du NCBI pour les labels cliniques. 96 % de correspondance. 28 546 variants à label fiable pour la pathogénicité, 65 188 pour la conflictualité.</li>
-        <li><b>Valeurs manquantes non imputées.</b> Mécanisme MNAR identifié : l’absence de score SIFT pour les variants non missense est une information, pas un manque. Les modèles à base d’arbres la traitent nativement.</li>
-        <li><b>Protocole.</b> 8 modèles, de la régression logistique aux gradient boosting, évalués par validation croisée stratifiée. Jeu de test touché une seule fois, à la fin.</li>
-        <li><b>Test de DeLong.</b> Supériorité des gradient boosting sur la régression logistique, p inférieur à 0,0001.</li>
-        <li><b>Variable créée.</b> af_disagreement, écart-type de la fréquence allélique entre trois bases populationnelles. Première variable pour prédire les désaccords entre laboratoires.</li>
-        <li><b>Profil d’erreur choisi.</b> Plus de faux positifs que de faux négatifs : sur-investiguer plutôt que manquer un variant pathogène.</li>
-      </ul>
-      <p class="pile"><b>Outils.</b> Python, XGBoost, LightGBM, CatBoost, scikit-learn.</p>
-    </div>
-  </article>
-
-  <article class="dossier">
-    <div class="g">
-      <h3><a href="https://github.com/mahebegnis/prisma-digital-twins-smart-buildings">Revue systématique PRISMA 2020</a></h3>
-      <p class="ctx">Jumeaux numériques pour l’optimisation énergétique des bâtiments intelligents, 2015 à 2025. Travail à cinq auteurs.</p>
-      <dl class="met">
-        <div><dt class="chiffre cpt" style="--n:29" data-pre="" data-suf=""><b>29</b></dt><dd><small>pages au format IEEE, 52 références</small></dd></div>
-        <div><dt class="chiffre cpt" style="--n:7" data-pre="" data-suf=""><b>7</b></dt><dd><small>scripts Python, une décision tracée en CSV à chaque étape</small></dd></div>
-      </dl>
-      <input type="checkbox" id="p6" class="vh plus"><label for="p6" class="plus-l"><span class="off">Voir le détail</span><span class="on">Replier</span></label>
-    </div>
-    <div class="detail">
-      <ul class="ent">
-        <li><span class="chiffre cpt" style="--n:704" data-pre="" data-suf=""><b>704</b></span><div><i style="--w:100%"></i><small>références brutes : Scopus 343, Web of Science 150, Springer 144, IEEE 67</small></div></li>
-        <li><span class="chiffre cpt" style="--n:548" data-pre="" data-suf=""><b>548</b></span><div><i style="--w:78%"></i><small>après déduplication sur DOI puis titre et année</small></div></li>
-        <li><span class="chiffre cpt" style="--n:167" data-pre="" data-suf=""><b>167</b></span><div><i style="--w:24%"></i><small>après présélection sur titre et résumé assistée par LLM, validée par les cinq auteurs</small></div></li>
-        <li><span class="chiffre cpt" style="--n:130" data-pre="" data-suf=""><b>130</b></span><div><i style="--w:18%"></i><small>après application de quatre critères cumulatifs</small></div></li>
-        <li><span class="chiffre cpt" style="--n:51" data-pre="" data-suf=""><b>51</b></span><div><i style="--w:7%"></i><small>textes intégraux lus, le reste étant inaccessible</small></div></li>
-        <li><span class="chiffre cpt" style="--n:45" data-pre="" data-suf=""><b>45</b></span><div><i style="--w:6.4%"></i><small>études incluses dans la synthèse, cartographiées sur 80 motifs techniques</small></div></li>
-      </ul>
-      <p class="pile"><b>Publication.</b> Licence CC BY 4.0, fichier de citation, article et pipeline dans le dépôt.</p>
-    </div>
-  </article>
-</div></section>
-
-<section id="parcours"><div class="col">
-  <h2>Parcours</h2>
-  <div class="par">
+<section id="parcours" aria-labelledby="t-par">
+  <div class="col">
+    <h2 id="t-par" data-revele>Parcours</h2>
+<div class="par">
     <div><h3>Expérience</h3><ul>
       <li><time>2025 à 2027</time><div><b>Six and See, Lille</b><span>Développeur IA et data scientist en alternance. Cabinet de conseil en IA et data. Projets clients menés en large autonomie, du cadrage technique à la recette, en interlocuteur direct du client.</span></div></li>
       <li><time>2025</time><div><b>Observatoire de la Cybersécurité de l’Océan Indien</b><span>Stage, mai à juillet. Contribution à une plateforme d’alerting : API Shodan et Censys, PostgreSQL, visualisation temps réel, capteurs IoT. Intervenant à une conférence sur la sécurité et l’éthique de l’IA devant des DPO et RSSI.</span></div></li>
@@ -453,18 +306,33 @@ body:has(#rapide:checked) .dossier > .g{position:static}
       <li><time>2024 à 2025</time><div><b>Certifications et distinctions</b><span>SecNumEdu (ANSSI), atelier RGPD (CNIL). Première place nationale à la Nuit de l’Informatique, défi Ubisoft. Anglais courant, certification CLES B2.</span></div></li>
     </ul></div>
   </div>
-</div></section>
+  </div>
+</section>
 
-<section id="contact" class="contact"><div class="col">
-  <h2>Écrivez-moi, <span class="ital">je réponds</span></h2>
-  <ul class="cl">
+<section id="contact" class="contact" aria-labelledby="t-contact">
+  <div class="col">
+    <h2 id="t-contact" data-lignes><span class="ligne"><span class="ligne-in">Écrivez-moi,</span></span> <span class="ligne"><span class="ligne-in ital">je réponds</span></span></h2>
+    <div class="contact-rang">
+<ul class="cl">
     <li><a href="mailto:mahebegnis9@gmail.com"><span>Email</span><span>mahebegnis9@gmail.com</span></a></li>
     <li><a href="https://www.linkedin.com/in/mahebegnis/"><span>LinkedIn</span><span>linkedin.com/in/mahebegnis</span></a></li>
     <li><a href="https://github.com/mahebegnis"><span>GitHub</span><span>github.com/mahebegnis</span></a></li>
     <li><a href="CV_Mahe_Begnis.pdf"><span>CV</span><span>PDF, deux pages</span></a></li>
   </ul>
-  <footer><span>Mahé Begnis, 2026</span><span>Page sans cookie, sans script et sans mesure d’audience.</span></footer>
-</div></section>
+      <a class="rond" href="mailto:mahebegnis9@gmail.com" data-aimant=".4"><span data-aimant-in>Écrire un e-mail</span></a>
+    </div>
+    <footer><span>Mahé Begnis, 2026</span><span>Page sans cookie ni mesure d’audience, sans ressource externe.</span></footer>
+  </div>
+</section>
 
+</main>
+
+<dialog class="panneau" id="panneau" aria-labelledby="panneau-titre">
+  <div class="panneau-in" data-lenis-prevent>
+    <div class="panneau-tete"><h2 id="panneau-titre"></h2><button class="fermer" type="button" aria-label="Fermer le détail"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M6 6l12 12M18 6L6 18"/></svg></button></div>
+    <div class="panneau-corps"></div>
+  </div>
+</dialog>
+<div class="pastille" aria-hidden="true"><span>Voir le détail</span></div>
 </body>
 </html>
