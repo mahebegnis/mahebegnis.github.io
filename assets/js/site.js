@@ -69,6 +69,103 @@
   panneau.addEventListener('click', (e) => { if (e.target === panneau || e.target.closest('.fermer')) panneau.close(); });
   addEventListener('beforeprint', () => $$('details').forEach((d) => { d.open = true; }));
 
+  /* ---------- carte des compétences : survol, focus ou toucher affichent le détail d'un domaine ----------
+     Sans ce script, les cinq domaines restent affichés avec tout leur détail. */
+  function initCarte() {
+    const racine = $('[data-carte]');
+    const items = racine ? $$('.domaine', racine) : [];
+    if (!items.length) return;
+    const liste = $('.domaines', racine);
+    const large = matchMedia('(min-width: 1100px)');
+    const panneauC = document.createElement('div');
+    panneauC.className = 'comp-panneau'; panneauC.id = 'comp-panneau'; panneauC.setAttribute('role', 'region');
+    const titreC = document.createElement('p'); titreC.className = 'comp-titre'; titreC.setAttribute('aria-hidden', 'true');
+    const corpsC = document.createElement('div'); corpsC.className = 'comp-corps';
+    panneauC.append(titreC, corpsC);
+    const boutons = items.map((li, i) => {
+      const h3 = $('h3', li), ic = $('.domaine-ic', li), nom = h3.textContent.trim();
+      const b = document.createElement('button');
+      b.type = 'button'; b.className = 'domaine-b'; b.id = `dom-b-${i}`;
+      b.setAttribute('aria-expanded', 'false'); b.setAttribute('aria-controls', 'comp-panneau');
+      const n = document.createElement('span'); n.className = 'domaine-nom'; n.textContent = nom;
+      const c = document.createElement('span'); c.className = 'domaine-clefs'; c.textContent = li.dataset.clefs || '';
+      const f = document.createElement('span'); f.className = 'domaine-fleche'; f.setAttribute('aria-hidden', 'true');
+      b.append(ic, n, c, f);
+      h3.replaceChildren(b);
+      return b;
+    });
+    let actif = -1;
+    const remplir = (i) => {
+      titreC.textContent = $('.domaine-nom', boutons[i]).textContent;
+      panneauC.setAttribute('aria-label', titreC.textContent);
+      corpsC.replaceChildren(...$$('.domaine-detail > *', items[i]).map((n) => n.cloneNode(true)));
+    };
+    const placer = () => {
+      if (large.matches) liste.after(panneauC); else items[actif].append(panneauC);
+      if (large.matches) {
+        const r = items[actif].getBoundingClientRect(), pr = panneauC.getBoundingClientRect();
+        panneauC.style.setProperty('--x', `${r.left + r.width / 2 - pr.left}px`);
+      }
+    };
+    // hauteur du panneau fixée sur le plus grand détail : rien ne bouge en dessous quand on change de domaine
+    const fixerHauteur = () => {
+      panneauC.style.minHeight = '';
+      if (!large.matches || actif < 0) return;
+      let max = 0;
+      items.forEach((_, i) => { remplir(i); max = Math.max(max, panneauC.offsetHeight); });
+      remplir(actif);
+      panneauC.style.minHeight = `${Math.ceil(max)}px`;
+    };
+    const rafraichir = (() => { let t = 0; return () => { clearTimeout(t); t = setTimeout(() => window.ScrollTrigger?.refresh(), 200); }; })();
+    const activer = (i, anime = true) => {
+      if (i === actif) return;
+      const avant = actif < 0 ? null : items[i].getBoundingClientRect().top;
+      actif = i;
+      boutons.forEach((b, k) => { b.setAttribute('aria-expanded', String(k === i)); items[k].classList.toggle('actif', k === i); });
+      remplir(i); placer();
+      if (anime && !reduit) { panneauC.classList.remove('entre'); void panneauC.offsetWidth; panneauC.classList.add('entre'); }
+      if (!large.matches) {   // accordéon : la case touchée reste là où le doigt l'a posée
+        if (avant !== null) { const dy = items[i].getBoundingClientRect().top - avant; if (Math.abs(dy) > 1) { if (lenis) lenis.scrollTo(scrollY + dy, { immediate: true }); else scrollBy(0, dy); } }
+        rafraichir();
+      }
+    };
+    boutons.forEach((b, i) => {
+      b.addEventListener('click', () => activer(i));
+      b.addEventListener('pointerenter', (e) => { if (e.pointerType === 'mouse' && large.matches) activer(i); });
+      b.addEventListener('focus', () => { if (large.matches && b.matches(':focus-visible')) activer(i); });
+    });
+    racine.classList.add('carte-js');
+    activer(large.matches ? 2 : 0, false);
+    fixerHauteur();
+    let tr = 0;
+    const recaler = () => { clearTimeout(tr); tr = setTimeout(() => { placer(); fixerHauteur(); placer(); rafraichir(); }, 120); };
+    large.addEventListener('change', recaler);
+    addEventListener('resize', recaler);
+    document.fonts?.ready.then(recaler);
+  }
+  initCarte();
+
+  /* ---------- frise du parcours : le fil se remplit au défilement, chaque étape se débloque quand il l'atteint ---------- */
+  function initFrise() {
+    const quete = $('[data-quete]');
+    if (!quete || reduit) return;                   // en mouvement réduit : frise entière, toutes étapes débloquées
+    const piste = $('.frise-ligne', quete), fil = $('.fil', quete);
+    const etapes = $$('.etape', quete), noeuds = etapes.map((e) => $('.noeud', e));
+    quete.classList.add('quete-vive');
+    let attente = 0;
+    const maj = () => {
+      attente = 0;
+      const ligne = innerHeight * 0.62, r = piste.getBoundingClientRect();
+      fil.style.setProperty('--p', Math.min(1, Math.max(0, (ligne - r.top) / r.height)).toFixed(4));
+      etapes.forEach((e, i) => { const n = noeuds[i].getBoundingClientRect(); e.classList.toggle('debloque', n.top + n.height / 2 <= ligne); });
+    };
+    const planifier = () => { if (!attente) attente = requestAnimationFrame(maj); };
+    addEventListener('scroll', planifier, { passive: true });
+    addEventListener('resize', planifier);
+    maj();
+  }
+  initFrise();
+
   if (!pret) { root.classList.add('statique'); return; }
   root.classList.add('motion');
 
@@ -151,21 +248,6 @@
     hero.addEventListener('pointerleave', surSortie);
     return () => { hero.removeEventListener('pointermove', surMouvement); hero.removeEventListener('pointerleave', surSortie); };
   });
-
-  /* ---------- bandeau : défile en continu, accélère et s'inverse avec le défilement ---------- */
-  {
-    const piste = $('.piste'), groupe = $('.groupe', piste), poser = gsap.quickSetter(piste, 'x', 'px');
-    let largeur = groupe.offsetWidth, x = 0, sens = 1, actif = false;
-    ScrollTrigger.create({ trigger: '.bandeau', start: 'top bottom', end: 'bottom top',
-      onToggle: (s) => { actif = s.isActive; }, onRefresh: () => { largeur = groupe.offsetWidth; } });
-    gsap.ticker.add((t, dt) => {
-      if (!actif || !largeur) return;
-      const v = lenis ? lenis.velocity : 0;
-      if (Math.abs(v) > 0.5) sens = Math.sign(v);
-      x = gsap.utils.wrap(-largeur, 0, x - (60 + Math.min(Math.abs(v) * 20, 1200)) * sens * (dt / 1000));
-      poser(x);
-    });
-  }
 
   /* ---------- vitrine : épinglée sur grand écran, empilée ailleurs ---------- */
   {
@@ -283,28 +365,6 @@
       scrollTrigger: { trigger: '#realisations', start: 'top 95%', end: 'top 35%', scrub: true } });
   }
 
-  /* ---------- autres réalisations : aperçu dessiné qui suit le curseur ---------- */
-  if (fin) {
-    const liste = $('.index-liste'), apercu = $('.apercu'), piste = $('.apercu-piste', apercu), lignes = $$('.index-ligne');
-    gsap.set(apercu, { xPercent: -50, yPercent: -50, scale: 0.6 });
-    const xA = gsap.quickTo(apercu, 'x', { duration: 0.65, ease: 'power3' });
-    const yA = gsap.quickTo(apercu, 'y', { duration: 0.65, ease: 'power3' });
-    const rA = gsap.quickTo(apercu, 'rotation', { duration: 0.9, ease: 'power3' });
-    const poser = gsap.delayedCall(0.12, () => rA(0)).pause();
-    let dernierX = 0;
-    liste.addEventListener('pointerenter', (e) => {
-      gsap.set(apercu, { x: e.clientX, y: e.clientY }); dernierX = e.clientX;
-      gsap.to(apercu, { autoAlpha: 1, scale: 1, duration: 0.5, ease: 'power3.out', overwrite: 'auto' });
-    });
-    liste.addEventListener('pointerleave', () => gsap.to(apercu, { autoAlpha: 0, scale: 0.6, duration: 0.4, ease: 'power3.in', overwrite: 'auto' }));
-    liste.addEventListener('pointermove', (e) => {
-      xA(e.clientX); yA(e.clientY);
-      rA(gsap.utils.clamp(-8, 8, (e.clientX - dernierX) * 0.5)); dernierX = e.clientX; poser.restart(true);
-    });
-    lignes.forEach((l, i) => l.addEventListener('pointerenter', () =>
-      gsap.to(piste, { yPercent: -(100 / lignes.length) * i, duration: 0.75, ease: 'expo.out', overwrite: true })));
-  }
-
   /* ---------- manifeste : les mots s'allument au fil du défilement ---------- */
   $$('[data-mots]').forEach((p) => {
     const mots = p.textContent.replace(/\s+/g, ' ').trim().split(' ');
@@ -320,7 +380,7 @@
   $$('[data-revele]').forEach((el) => gsap.from(el, { autoAlpha: 0, y: 36, duration: 1.1, ease: 'power3.out',
     scrollTrigger: { trigger: el, start: 'top 88%', once: true } }));
   // seuls les blocs encore sous l'écran sont cachés ; un saut par ancre qui les dépasse les révèle aussi
-  const aReveler = $$('.reg > div, .par li, .index-ligne, .cl li').filter((el) => el.getBoundingClientRect().top > innerHeight);
+  const aReveler = $$('.index-ligne, .cl li').filter((el) => el.getBoundingClientRect().top > innerHeight);
   gsap.set(aReveler, { autoAlpha: 0, y: 26 });
   const reveler = (els) => gsap.to(els, { autoAlpha: 1, y: 0, duration: 0.9, ease: 'power3.out', stagger: 0.06, overwrite: true });
   ScrollTrigger.batch(aReveler, { start: 'top 92%', onEnter: reveler, onLeave: reveler, onEnterBack: reveler });
